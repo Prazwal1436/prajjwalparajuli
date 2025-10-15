@@ -14,6 +14,7 @@ import Footer from '@/components/Footer';
 import BlogJsonLd from '@/components/BlogJsonLd';
 import ReviewsJsonLd from '@/components/ReviewsJsonLd';
 import FAQJsonLd from '@/components/FAQJsonLd';
+import CookieConsent from '@/components/CookieConsent';
 
 const SITE_URL = 'https://prajjwalparajuli.com.np';
 
@@ -708,6 +709,26 @@ const websiteData = {
 export default function Home() {
   return (
     <>
+      {/* Google Consent Mode v2 - Default to denied */}
+      <Script id="google-consent-mode" strategy="beforeInteractive">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          
+          // Default consent mode - denied until user accepts
+          gtag('consent', 'default', {
+            'ad_storage': 'denied',
+            'ad_user_data': 'denied',
+            'ad_personalization': 'denied',
+            'analytics_storage': 'denied',
+            'functionality_storage': 'denied',
+            'personalization_storage': 'denied',
+            'security_storage': 'granted',
+            'wait_for_update': 500
+          });
+        `}
+      </Script>
+      
       <Script
         src="https://www.googletagmanager.com/gtag/js?id=G-JDGFYK81LZ"
         strategy="afterInteractive"
@@ -718,7 +739,10 @@ export default function Home() {
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
-          gtag('config', 'G-JDGFYK81LZ');
+          gtag('config', 'G-JDGFYK81LZ', {
+            'anonymize_ip': true,
+            'cookie_flags': 'SameSite=None;Secure'
+          });
         `}
       </Script>
       {/* Structured Data */}
@@ -796,6 +820,9 @@ export default function Home() {
           <Footer />
         </div>
       </div>
+      
+      {/* Cookie Consent Banner */}
+      <CookieConsent />
     </>
   );
 }
