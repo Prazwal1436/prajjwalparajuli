@@ -54,7 +54,7 @@ export default function manifest(): MetadataRoute.Manifest {
     related_applications: [
       {
         platform: 'web',
-        url: 'https://prajjwalparajuli.com'
+        url: 'https://prajjwalparajuli.com.np'
       }
     ],
     prefer_related_applications: false

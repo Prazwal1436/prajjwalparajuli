@@ -4,18 +4,18 @@ export default function BlogJsonLd() {
     '@type': 'Blog',
     name: 'Prajjwal Parajuli Development Blog',
     description: 'Tips, tutorials, and insights on affordable web development, React, Next.js, and budget-friendly programming solutions for USA businesses.',
-    url: 'https://prajjwalparajuli.com/blog',
+  url: 'https://prajjwalparajuli.com.np/blog',
     author: {
       '@type': 'Person',
       name: 'Prajjwal Parajuli',
-      url: 'https://prajjwalparajuli.com',
+  url: 'https://prajjwalparajuli.com.np',
     },
     publisher: {
       '@type': 'Organization',
       name: 'Prajjwal Parajuli Development Services',
       logo: {
         '@type': 'ImageObject',
-        url: 'https://prajjwalparajuli.com/logo.png',
+  url: 'https://prajjwalparajuli.com.np/logo.png',
       },
     },
     blogPost: [
@@ -23,7 +23,7 @@ export default function BlogJsonLd() {
         '@type': 'BlogPosting',
         headline: 'Why I Can Offer 80% Cheaper Development Without Compromising Quality',
         description: 'Learn how Nepal-based developers can provide premium quality at budget prices.',
-        url: 'https://prajjwalparajuli.com/blog/affordable-development-explained',
+  url: 'https://prajjwalparajuli.com.np/blog/affordable-development-explained',
         datePublished: '2025-10-15',
         dateModified: '2025-10-15',
         author: {
@@ -36,7 +36,7 @@ export default function BlogJsonLd() {
         '@type': 'BlogPosting',
         headline: 'Complete Guide to Hiring Budget Developers in 2025',
         description: 'Everything you need to know about finding reliable, affordable developers.',
-        url: 'https://prajjwalparajuli.com/blog/hiring-budget-developers-guide',
+  url: 'https://prajjwalparajuli.com.np/blog/hiring-budget-developers-guide',
         datePublished: '2025-10-14',
         dateModified: '2025-10-14',
         author: {

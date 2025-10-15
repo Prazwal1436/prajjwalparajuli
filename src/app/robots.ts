@@ -14,7 +14,7 @@ export default function robots(): MetadataRoute.Robots {
         disallow: ['/api/', '/admin/', '/private/'],
       },
     ],
-    sitemap: 'https://prajjwalparajuli.com/sitemap.xml',
-    host: 'https://prajjwalparajuli.com',
+    sitemap: 'https://prajjwalparajuli.com.np/sitemap.xml',
+    host: 'https://prajjwalparajuli.com.np',
   }
 }

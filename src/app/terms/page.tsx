@@ -50,7 +50,7 @@ export default function TermsOfService() {
                 <span>Agreement to Terms</span>
               </h2>
               <p className="text-gray-700 leading-relaxed">
-                Welcome to Prajjwal Parajuli's portfolio and services website. These Terms of Service ("Terms") constitute a legally binding agreement between you ("User," "you," or "your") and Prajjwal Parajuli ("we," "us," or "our") regarding your use of our website <a href="https://prajjwalparajuli.com" className="text-blue-600 hover:underline">prajjwalparajuli.com</a> and any related services.
+                Welcome to Prajjwal Parajuli's portfolio and services website. These Terms of Service ("Terms") constitute a legally binding agreement between you ("User," "you," or "your") and Prajjwal Parajuli ("we," "us," or "our") regarding your use of our website <a href="https://prajjwalparajuli.com.np" className="text-blue-600 hover:underline">prajjwalparajuli.com.np</a> and any related services.
               </p>
               <p className="text-gray-700 leading-relaxed mt-4">
                 By accessing or using our website and services, you agree to be bound by these Terms. If you disagree with any part of these Terms, you may not access our website or use our services.

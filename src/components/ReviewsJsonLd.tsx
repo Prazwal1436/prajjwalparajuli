@@ -14,7 +14,7 @@ export default function ReviewsJsonLd() {
       priceCurrency: 'USD',
       availability: 'https://schema.org/InStock',
       priceValidUntil: '2025-12-31',
-      url: 'https://prajjwalparajuli.com',
+  url: 'https://prajjwalparajuli.com.np',
       eligibleRegion: {
         '@type': 'GeoCircle',
         geoMidpoint: {

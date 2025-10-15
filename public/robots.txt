@@ -13,10 +13,10 @@ Allow: /_next/static/
 Allow: /static/
 
 # Sitemap location
-Sitemap: https://prajjwalparajuli.com/sitemap.xml
+Sitemap: https://prajjwalparajuli.com.np/sitemap.xml
 
 # Host
-Host: https://prajjwalparajuli.com
+Host: https://prajjwalparajuli.com.np
 
 # Crawl-delay (in seconds) - optional
 Crawl-delay: 1

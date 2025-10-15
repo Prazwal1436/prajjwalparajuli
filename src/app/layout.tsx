@@ -15,6 +15,8 @@ const geistMono = Geist_Mono({
   display: "swap",
 });
 
+const siteUrl = "https://prajjwalparajuli.com.np";
+
 export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1,
@@ -27,7 +29,7 @@ export const viewport: Viewport = {
 }
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://prajjwalparajuli.com'),
+  metadataBase: new URL(siteUrl),
   title: {
     default: "Prajjwal Parajuli - Full Stack Developer & Digital Marketing Expert",
     template: "%s | Prajjwal Parajuli"
@@ -48,9 +50,11 @@ export const metadata: Metadata = {
     "Backend Developer",
     "UI/UX Designer",
     "Kathmandu Developer",
-    "Freelance Developer Nepal"
+    "Freelance Developer Nepal",
+    "Saathi Developer",
+    "aone skills"  
   ],
-  authors: [{ name: "Prajjwal Parajuli", url: "https://prajjwalparajuli.com" }],
+  authors: [{ name: "Prajjwal Parajuli", url: siteUrl }],
   creator: "Prajjwal Parajuli",
   publisher: "Prajjwal Parajuli",
   formatDetection: {
@@ -61,7 +65,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Prajjwal Parajuli - Full Stack Developer & Digital Marketing Expert",
     description: "Creating digital solutions that drive business growth. Specializing in modern web development and strategic digital marketing.",
-    url: "https://prajjwalparajuli.com",
+  url: siteUrl,
     siteName: "Prajjwal Parajuli Portfolio",
     images: [
       {
@@ -114,10 +118,10 @@ export const metadata: Metadata = {
   },
   manifest: '/site.webmanifest',
   alternates: {
-    canonical: 'https://prajjwalparajuli.com',
+    canonical: siteUrl,
     languages: {
-      'en-US': 'https://prajjwalparajuli.com',
-      'ne-NP': 'https://prajjwalparajuli.com/ne',
+      'en-US': siteUrl,
+      'ne-NP': `${siteUrl}/ne`,
     },
   },
   verification: {
@@ -131,15 +135,15 @@ export const metadata: Metadata = {
   category: 'Technology',
   classification: 'Web Development, Digital Marketing',
   referrer: 'origin-when-cross-origin',
-  bookmarks: ['https://prajjwalparajuli.com'],
+  bookmarks: [siteUrl],
   appLinks: {
     web: {
-      url: 'https://prajjwalparajuli.com',
+      url: siteUrl,
       should_fallback: true,
     },
   },
-  archives: ['https://prajjwalparajuli.com/blog'],
-  assets: ['https://prajjwalparajuli.com/assets'],
+  archives: [`${siteUrl}/blog`],
+  assets: [`${siteUrl}/assets`],
   generator: 'Next.js',
   applicationName: 'Prajjwal Parajuli Portfolio',
   other: {
@@ -184,11 +188,11 @@ export default function RootLayout({
         <meta httpEquiv="X-XSS-Protection" content="1; mode=block" />
         
         {/* Canonical URL */}
-        <link rel="canonical" href="https://prajjwalparajuli.com" />
+  <link rel="canonical" href={siteUrl} />
         
         {/* Alternate hreflang for international SEO */}
-        <link rel="alternate" hrefLang="en" href="https://prajjwalparajuli.com" />
-        <link rel="alternate" hrefLang="x-default" href="https://prajjwalparajuli.com" />
+  <link rel="alternate" hrefLang="en" href={siteUrl} />
+  <link rel="alternate" hrefLang="x-default" href={siteUrl} />
         
         {/* Sitemap */}
         <link rel="sitemap" type="application/xml" href="/sitemap.xml" />

@@ -50,7 +50,7 @@ export default function PrivacyPolicy() {
                 <span>Introduction</span>
               </h2>
               <p className="text-gray-700 leading-relaxed">
-                Welcome to Prajjwal Parajuli's portfolio website ("we," "our," or "us"). We are committed to protecting your privacy and ensuring the security of your personal information. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website <a href="https://prajjwalparajuli.com" className="text-blue-600 hover:underline">prajjwalparajuli.com</a>.
+                Welcome to Prajjwal Parajuli's portfolio website ("we," "our," or "us"). We are committed to protecting your privacy and ensuring the security of your personal information. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website <a href="https://prajjwalparajuli.com.np" className="text-blue-600 hover:underline">prajjwalparajuli.com.np</a>.
               </p>
               <p className="text-gray-700 leading-relaxed mt-4">
                 By using our website, you consent to the data practices described in this policy. If you do not agree with the terms of this Privacy Policy, please do not access the website.

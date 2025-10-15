@@ -14,6 +14,8 @@ import BlogJsonLd from '@/components/BlogJsonLd';
 import ReviewsJsonLd from '@/components/ReviewsJsonLd';
 import FAQJsonLd from '@/components/FAQJsonLd';
 
+const SITE_URL = 'https://prajjwalparajuli.com.np';
+
 // SEO Metadata
 export const metadata: Metadata = {
   title: 'Prajjwal Parajuli - Premium Full Stack Developer USA | $50/hr Professional React Next.js Node.js Services | Save 40% | 150+ Happy Clients',
@@ -21,6 +23,14 @@ export const metadata: Metadata = {
   keywords: [
     // Core Identity + Brand
     'Prajjwal Parajuli',
+    'Prazwal Parazuli',
+    'Prajwal Parajuli',
+    'Prajwal Parajuli Nepal',
+    'Prajwal Parajuli Kathmandu',
+    'Prajwal Parajuli Freelance Developer',
+    'Prajwal Parajuli Remote Developer',
+    'Prajwal Parajuli Online Developer',
+    'Prajwal Parajuli Virtual Developer',
     'Prajjwal Parajuli Developer',
     'Prajjwal Parajuli Portfolio',
     'Prajjwal Parajuli Nepal',
@@ -362,7 +372,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://prajjwalparajuli.com',
+    url: SITE_URL,
     title: 'Prajjwal Parajuli - Professional Full Stack Developer USA | $50/hr | Save 40%',
     description: 'Trusted by 150+ clients worldwide! Premium React, Next.js, Node.js development starting at $50/hour. Money-back guarantee, 24h response, professional quality at competitive rates.',
     siteName: 'Prajjwal Parajuli Portfolio',
@@ -383,7 +393,7 @@ export const metadata: Metadata = {
     creator: '@prajjwalparajuli',
   },
   alternates: {
-    canonical: 'https://prajjwalparajuli.com',
+    canonical: SITE_URL,
   },
   verification: {
     google: 'your-google-verification-code',
@@ -425,8 +435,8 @@ const structuredData = {
   name: 'Prajjwal Parajuli',
   jobTitle: 'Professional Full Stack Developer - Starting at $50/hour',
   description: 'Professional Full Stack Developer offering premium React, Next.js, Node.js development starting at $50/hour - Save 40% compared to USA developers while getting the same professional quality.',
-  image: 'https://prajjwalparajuli.com/prajjwal.png',
-  url: 'https://prajjwalparajuli.com',
+  image: `${SITE_URL}/prajjwal.png`,
+  url: SITE_URL,
   priceRange: '$50',
   offers: [
     {
@@ -574,8 +584,8 @@ const organizationData = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
   name: 'Prajjwal Parajuli - Remote Development Services for USA',
-  url: 'https://prajjwalparajuli.com',
-  logo: 'https://prajjwalparajuli.com/logo.png',
+  url: 'https://prajjwalparajuli.com.np',
+  logo: 'https://prajjwalparajuli.com.np/logo.png',
   description: 'Professional remote web development and digital marketing services for USA businesses. Cost-effective solutions with American time zone support.',
   address: {
     '@type': 'PostalAddress',
@@ -675,7 +685,7 @@ const websiteData = {
   '@context': 'https://schema.org',
   '@type': 'WebSite',
   name: 'Prajjwal Parajuli Portfolio',
-  url: 'https://prajjwalparajuli.com',
+  url: SITE_URL,
   description: 'Professional portfolio of Prajjwal Parajuli - Full Stack Developer and Digital Marketing Expert from Nepal.',
   inLanguage: 'en-US',
   isAccessibleForFree: true,
@@ -685,7 +695,7 @@ const websiteData = {
   },
   potentialAction: {
     '@type': 'SearchAction',
-    target: 'https://prajjwalparajuli.com/search?q={search_term_string}',
+    target: `${SITE_URL}/search?q={search_term_string}`,
     'query-input': 'required name=search_term_string',
   },
 };
