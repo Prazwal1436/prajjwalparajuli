@@ -295,9 +295,9 @@ const Skills = () => {
                   iconBg: 'bg-gradient-to-br from-pink-500 to-red-500'
                 }
               ].map((item, index) => (
-                <div key={index} className="relative flex items-start lg:items-center">
+                <div key={index} className="relative flex flex-col lg:flex-row items-start lg:items-center">
                   {/* Timeline Dot & Connector */}
-                  <div className="absolute left-8 lg:left-1/2 transform lg:-translate-x-1/2 -translate-x-0 z-20">
+                  <div className="relative lg:absolute left-8 lg:left-1/2 transform lg:-translate-x-1/2 -translate-x-0 z-20 mb-6 lg:mb-0">
                     <div className={`relative flex items-center justify-center w-16 h-16 ${item.iconBg} rounded-2xl shadow-2xl rotate-45 group-hover:rotate-0 transition-transform duration-500`}>
                       <span className="text-2xl -rotate-45 group-hover:rotate-0 transition-transform duration-500">{item.icon}</span>
                     </div>
@@ -305,7 +305,7 @@ const Skills = () => {
                   </div>
 
                   {/* Content Container */}
-                  <div className={`w-full lg:w-[calc(50%-4rem)] ml-24 lg:ml-0 ${
+                  <div className={`w-full lg:w-[calc(50%-4rem)] ml-0 lg:ml-0 ${
                     item.side === 'right' ? 'lg:ml-[calc(50%+4rem)]' : 'lg:mr-[calc(50%+4rem)]'
                   }`}>
                     <div className="group relative">

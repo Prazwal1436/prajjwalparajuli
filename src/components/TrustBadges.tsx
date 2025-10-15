@@ -54,7 +54,7 @@ export default function TrustBadges() {
           </p>
         </div>
         
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+  <div className="grid grid-cols-2 gap-6">
           {badges.map((badge, index) => {
             const IconComponent = badge.icon;
             return (
@@ -74,7 +74,7 @@ export default function TrustBadges() {
         
         {/* Security Indicators */}
         <div className="mt-12 text-center">
-          <div className="flex items-center justify-center gap-8 text-md text-gray-600">
+          <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8 text-md text-gray-600">
             <div className="flex items-center gap-2">
               <CheckCircle className="h-5 w-5 text-green-600" />
               <span>SSL Secured</span>

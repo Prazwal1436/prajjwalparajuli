@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+import Script from 'next/script';
 import Header from '@/components/Header';
 import Hero from '@/components/Hero';
 import TrustBadges from '@/components/TrustBadges';
@@ -18,8 +19,8 @@ const SITE_URL = 'https://prajjwalparajuli.com.np';
 
 // SEO Metadata
 export const metadata: Metadata = {
-  title: 'Prajjwal Parajuli - Premium Full Stack Developer USA | $50/hr Professional React Next.js Node.js Services | Save 40% | 150+ Happy Clients',
-  description: 'Premium full-stack development at competitive rates! Professional React, Next.js, Node.js developer from Nepal serving USA businesses. Starting at $50/hour - Save 40% compared to local USA developers while getting the same quality. 150+ happy clients, money-back guarantee, 24h response time. Professional, reliable, high-quality web development services for businesses and enterprises.',
+  title: 'Prajjwal Parajuli | USA Full Stack Developer $50/hr',
+  description: 'Outsource to a Nepal-based full stack developer for USA businesses. Save 40% with expert Next.js, React, and Node.js solutions.',
   keywords: [
     // Core Identity + Brand
     'Prajjwal Parajuli',
@@ -31,7 +32,7 @@ export const metadata: Metadata = {
     'Prajwal Parajuli Remote Developer',
     'Prajwal Parajuli Online Developer',
     'Prajwal Parajuli Virtual Developer',
-    'Prajjwal Parajuli Developer',
+  'Prajjwal Parajuli Developer',
     'Prajjwal Parajuli Portfolio',
     'Prajjwal Parajuli Nepal',
     'Prajjwal Parajuli Web Developer',
@@ -57,7 +58,10 @@ export const metadata: Metadata = {
     'Competitive Web Development USA',
     'Professional Price Developer USA',
     'Premium Web Developer USA',
-    'Value Web Developer USA',
+  'Value Web Developer USA',
+  'USA outsourcing partner',
+  'Outsource your business with us',
+  'Nearshore developer USA',
     
     // Specific Price Point Keywords
     '$50 hour React Developer',
@@ -101,8 +105,9 @@ export const metadata: Metadata = {
     'Premium Remote MERN Developer',
     'Professional Remote Developer',
     'Quality Remote Development',
-    'Premium Remote Developer USA',
-    'Professional Remote Developer',
+  'Premium Remote Developer USA',
+  'Professional Remote Developer',
+  'USA outsourcing full stack developer',
     
     // Outsourcing + International Keywords
     'Professional Outsource Development USA',
@@ -373,8 +378,8 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'en_US',
     url: SITE_URL,
-    title: 'Prajjwal Parajuli - Professional Full Stack Developer USA | $50/hr | Save 40%',
-    description: 'Trusted by 150+ clients worldwide! Premium React, Next.js, Node.js development starting at $50/hour. Money-back guarantee, 24h response, professional quality at competitive rates.',
+    title: 'USA Outsourcing Partner – Prajjwal Parajuli | $50/hr',
+    description: 'Outsource your business with us at lower cost. Get US-quality Next.js, React, and Node.js solutions from Nepal with American time zone collaboration, 40% savings, and 150+ success stories.',
     siteName: 'Prajjwal Parajuli Portfolio',
     images: [
       {
@@ -387,8 +392,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Prajjwal Parajuli - $50/hr Full Stack Developer USA | 150+ Happy Clients',
-    description: 'Trusted developer with money-back guarantee. Save 40% on development costs while getting professional quality. 4.9/5 rating from 150+ clients.',
+    title: 'Outsource to Prajjwal Parajuli – $50/hr USA-Focused Full Stack Partner',
+    description: 'Outsource your business with us at lower cost. US-focused remote developer delivering Next.js, React, and Node.js builds with 40% savings and 150+ happy clients.',
     images: ['/twitter-card.jpg'],
     creator: '@prajjwalparajuli',
   },
@@ -434,7 +439,7 @@ const structuredData = {
   '@type': 'Person',
   name: 'Prajjwal Parajuli',
   jobTitle: 'Professional Full Stack Developer - Starting at $50/hour',
-  description: 'Professional Full Stack Developer offering premium React, Next.js, Node.js development starting at $50/hour - Save 40% compared to USA developers while getting the same professional quality.',
+  description: 'Outsource your business with us at lower cost. USA-focused full stack partner delivering React, Next.js, and Node.js builds from Nepal with American time zone collaboration and 40% savings.',
   image: `${SITE_URL}/prajjwal.png`,
   url: SITE_URL,
   priceRange: '$50',
@@ -584,8 +589,8 @@ const organizationData = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
   name: 'Prajjwal Parajuli - Remote Development Services for USA',
-  url: 'https://prajjwalparajuli.com.np',
-  logo: 'https://prajjwalparajuli.com.np/logo.png',
+  url: SITE_URL,
+  logo: `${SITE_URL}/logo.png`,
   description: 'Professional remote web development and digital marketing services for USA businesses. Cost-effective solutions with American time zone support.',
   address: {
     '@type': 'PostalAddress',
@@ -703,6 +708,19 @@ const websiteData = {
 export default function Home() {
   return (
     <>
+      <Script
+        src="https://www.googletagmanager.com/gtag/js?id=G-JDGFYK81LZ"
+        strategy="afterInteractive"
+        async
+      />
+      <Script id="gtag-init" strategy="afterInteractive">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-JDGFYK81LZ');
+        `}
+      </Script>
       {/* Structured Data */}
       <script
         type="application/ld+json"

@@ -13,10 +13,13 @@ const Hero = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
   const words = [
+    'USA Outsourcing Partner',
     'Full Stack Developer',
     'Digital Marketing Expert',
-    'UI/UX Designer',
-    'Tech Entrepreneur'
+    'Remote US Hours Support',
+    'AI Automation Lead',
+    'Growth Marketing Strategist',
+    'Enterprise Integration Partner'
   ];
 
   useEffect(() => {
@@ -111,7 +114,7 @@ const Hero = () => {
             <div className="inline-flex items-center space-x-2 glass rounded-full px-4 py-2 text-sm font-medium">
               <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
               <MapPin size={16} className="text-blue-600" />
-              <span className="text-gray-700">Available for work • Based in Nepal</span>
+              <span className="text-gray-700">US-focused outsourcing • Based in Nepal</span>
             </div>
             
             {/* Main Heading */}
@@ -135,9 +138,9 @@ const Hero = () => {
               </div>
               
               <p className="text-fluid-lg text-gray-600 leading-relaxed max-w-2xl">
-                Passionate about creating digital solutions that make a difference. 
-                I combine technical expertise with creative vision to build exceptional 
-                web experiences and drive business growth through digital marketing.
+                Outsource your business with us at lower cost. I help US companies ship 
+                React, Next.js, and Node.js products from Nepal with American time zone support, 
+                40% savings, and enterprise-level delivery standards.
               </p>
             </div>
 
