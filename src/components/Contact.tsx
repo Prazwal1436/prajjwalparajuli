@@ -115,7 +115,7 @@ const Contact = () => {
       details: 'contact@prajjwalparajuli.com.np', // Change this to your actual email
       subtitle: 'Send me an email',
       link: 'mailto:contact@prajjwalparajuli.com.np', // Change this too
-      gradient: 'from-blue-500 to-blue-600',
+      gradient: 'from-[color:var(--accent)] to-[color:var(--accent-2)]',
       emoji: '📧'
     },
     {
@@ -124,7 +124,7 @@ const Contact = () => {
       details: '+977 9842747572',
       subtitle: 'Call for urgent projects',
       link: 'tel:+9779842747572',
-      gradient: 'from-green-500 to-green-600',
+      gradient: 'from-[color:var(--accent-3)] to-[color:var(--accent)]',
       emoji: '📱'
     },
     {
@@ -133,7 +133,7 @@ const Contact = () => {
       details: 'Kathmandu, Nepal',
       subtitle: 'Available for remote work',
       link: 'https://maps.google.com/?q=Kathmandu,Nepal',
-      gradient: 'from-purple-500 to-purple-600',
+      gradient: 'from-[color:var(--accent-2)] to-[color:var(--accent)]',
       emoji: '🌍'
     },
     {
@@ -142,7 +142,7 @@ const Contact = () => {
       details: 'Connect with me',
       subtitle: 'Professional networking',
       link: 'https://www.linkedin.com/in/prajjwalparajuli20010215',
-      gradient: 'from-blue-600 to-blue-700',
+      gradient: 'from-[color:var(--accent)] to-[color:var(--accent-2)]',
       emoji: '💼'
     },
     {
@@ -151,7 +151,7 @@ const Contact = () => {
       details: 'prajjwalparajuli.com.np',
       subtitle: 'Visit my portfolio',
       link: 'https://prajjwalparajuli.com.np',
-      gradient: 'from-emerald-500 to-emerald-600',
+      gradient: 'from-[color:var(--accent-3)] to-[color:var(--accent)]',
       emoji: '🌐'
     }
   ];
@@ -202,68 +202,68 @@ const Contact = () => {
   ];
 
   return (
-    <section ref={sectionRef} id="contact" className="relative py-20 lg:py-32 overflow-hidden">
+    <section ref={sectionRef} id="contact" className="relative py-24 lg:py-40 overflow-hidden grid-surface">
       {/* Enhanced Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-slate-50 via-blue-50/50 to-indigo-50/30"></div>
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,color-mix(in_srgb,var(--accent)_16%,transparent),transparent_55%)]"></div>
       
       {/* Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-1/4 right-1/4 w-72 h-72 bg-gradient-to-r from-blue-400/10 to-purple-400/10 rounded-full blur-3xl animate-pulse" style={{ animationDuration: '8s' }}></div>
-        <div className="absolute bottom-1/4 left-1/4 w-80 h-80 bg-gradient-to-r from-purple-400/8 to-pink-400/8 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '4s', animationDuration: '10s' }}></div>
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-gradient-to-r from-emerald-400/8 to-cyan-400/8 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s', animationDuration: '12s' }}></div>
+        <div className="absolute top-1/4 right-1/4 w-72 h-72 bg-gradient-to-r from-[color:var(--accent)]/10 to-[color:var(--accent-2)]/10 rounded-full blur-3xl animate-pulse" style={{ animationDuration: '8s' }}></div>
+        <div className="absolute bottom-1/4 left-1/4 w-80 h-80 bg-gradient-to-r from-[color:var(--accent-2)]/8 to-[color:var(--accent-3)]/8 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '4s', animationDuration: '10s' }}></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-gradient-to-r from-[color:var(--accent-3)]/8 to-[color:var(--accent)]/8 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s', animationDuration: '12s' }}></div>
       </div>
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Redesigned Header Section */}
-        <div className="text-center mb-16 sm:mb-20 lg:mb-24">
-          <div className="inline-flex items-center gap-3 glass rounded-full px-6 py-3 mb-8 group hover:scale-105 transition-all duration-300 backdrop-blur-md border border-white/30">
-            <div className="w-2 h-2 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full animate-pulse"></div>
-            <MessageCircle size={18} className="text-blue-600 group-hover:animate-bounce" />
-            <span className="text-sm font-semibold text-gray-700">Get In Touch</span>
-            <div className="w-px h-4 bg-gray-300"></div>
-            <span className="text-xs text-gray-500 font-medium">Let's Connect</span>
+        <div className="text-center mb-20 sm:mb-20 lg:mb-24">
+          <div className="inline-flex items-center gap-3 glass rounded-full px-6 py-3 mb-10 group hover:scale-105 transition-all duration-300 backdrop-blur-md border border-[color:var(--border)]">
+            <div className="w-2 h-2 bg-gradient-to-r from-[color:var(--accent)] to-[color:var(--accent-2)] rounded-full animate-pulse"></div>
+            <MessageCircle size={18} className="text-[color:var(--accent)] group-hover:animate-bounce" />
+            <span className="text-sm font-semibold text-muted">Get In Touch</span>
+            <div className="w-px h-4 bg-[color:var(--border)]"></div>
+            <span className="text-xs text-muted font-medium">Let's Connect</span>
           </div>
           
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-gray-900 mb-6 leading-tight">
+          <h2 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-theme mb-6 leading-tight">
             Let's Work <span className="gradient-text relative inline-block">
               Together
-              <div className="absolute -bottom-2 left-0 right-0 h-3 bg-gradient-to-r from-blue-200/40 to-purple-200/40 -skew-x-12 rounded-full"></div>
+              <div className="absolute -bottom-2 left-0 right-0 h-3 bg-gradient-to-r from-[color:var(--accent)]/20 to-[color:var(--accent-2)]/20 -skew-x-12 rounded-full"></div>
             </span>
           </h2>
           
-          <p className="text-lg sm:text-xl lg:text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-lg sm:text-xl lg:text-2xl text-muted max-w-3xl mx-auto leading-relaxed">
             Ready to transform your ideas into reality? I'd love to hear about your project and 
-            <span className="font-semibold text-gray-800"> help bring your vision to life</span>.
+            <span className="font-semibold text-theme"> help bring your vision to life</span>.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 xl:grid-cols-5 gap-8 lg:gap-12">
+        <div className="grid grid-cols-1 xl:grid-cols-5 gap-10 lg:gap-12">
           {/* Enhanced Contact Form */}
           <div className="xl:col-span-3">
-            <div className="glass rounded-2xl p-8 lg:p-10 xl:p-12 backdrop-blur-xl border border-white/20 hover:border-white/30 transition-all duration-500 relative overflow-hidden">
+            <div className="glass rounded-2xl p-8 lg:p-10 xl:p-12 backdrop-blur-xl border border-[color:var(--border)] hover:border-[color:var(--accent)]/40 transition-all duration-500 relative overflow-hidden">
               {/* Background Effects */}
-              <div className="absolute inset-0 bg-gradient-to-br from-blue-600/3 via-purple-600/3 to-pink-600/3"></div>
-              <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-r from-blue-400/8 to-purple-400/8 rounded-full blur-2xl"></div>
+              <div className="absolute inset-0 bg-gradient-to-br from-[color:var(--accent)]/6 via-[color:var(--accent-2)]/6 to-[color:var(--accent-3)]/6"></div>
+              <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-r from-[color:var(--accent)]/8 to-[color:var(--accent-2)]/8 rounded-full blur-2xl"></div>
               
               <div className="relative z-10">
                 {/* Form Header */}
-                <div className="flex items-center gap-4 mb-10">
-                  <div className="w-14 h-14 bg-gradient-to-r from-blue-500 to-purple-600 rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
+                <div className="flex items-center gap-6 mb-10">
+                  <div className="w-14 h-14 bg-gradient-to-r from-[color:var(--accent)] to-[color:var(--accent-2)] rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
                     <Send size={24} className="text-white" />
                   </div>
                   <div>
-                    <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-1">
+                    <h3 className="text-2xl sm:text-3xl font-bold text-theme mb-1">
                       Send Me a Message
                     </h3>
-                    <p className="text-gray-600 text-base sm:text-lg">Let's discuss your project in detail</p>
+                    <p className="text-muted text-base sm:text-lg">Let's discuss your project in detail</p>
                   </div>
                 </div>
                 
                 <form onSubmit={handleSubmit} className="space-y-8">
                   {/* Name and Email Row */}
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                     <div className="group space-y-3">
-                      <label htmlFor="name" className="block text-sm font-bold text-gray-700">
+                      <label htmlFor="name" className="block text-sm font-bold text-muted">
                         Full Name *
                       </label>
                       <div className="relative">
@@ -278,19 +278,19 @@ const Contact = () => {
                           required
                           className={`w-full px-4 py-4 glass rounded-xl border-2 transition-all duration-300 text-base font-medium ${
                             focusedField === 'name' 
-                              ? 'border-blue-500 shadow-lg shadow-blue-500/20 scale-[1.01]' 
-                              : 'border-gray-200/50 hover:border-gray-300/70'
+                              ? 'border-[color:var(--accent)] shadow-lg shadow-[0_20px_40px_-30px_var(--glow)] scale-[1.01]' 
+                              : 'border-[color:var(--border)]/50 hover:border-[color:var(--border)]/70'
                           }`}
                           placeholder="Your full name"
                         />
                         {focusedField === 'name' && (
-                          <div className="absolute inset-0 bg-gradient-to-r from-blue-500/5 to-purple-500/5 rounded-xl pointer-events-none"></div>
+                          <div className="absolute inset-0 bg-gradient-to-r from-[color:var(--accent)]/5 to-[color:var(--accent-2)]/5 rounded-xl pointer-events-none"></div>
                         )}
                       </div>
                     </div>
                     
                     <div className="group space-y-3">
-                      <label htmlFor="email" className="block text-sm font-bold text-gray-700">
+                      <label htmlFor="email" className="block text-sm font-bold text-muted">
                         Email Address *
                       </label>
                       <div className="relative">
@@ -305,22 +305,22 @@ const Contact = () => {
                           required
                           className={`w-full px-4 py-4 glass rounded-xl border-2 transition-all duration-300 text-base font-medium ${
                             focusedField === 'email' 
-                              ? 'border-blue-500 shadow-lg shadow-blue-500/20 scale-[1.01]' 
-                              : 'border-gray-200/50 hover:border-gray-300/70'
+                              ? 'border-[color:var(--accent)] shadow-lg shadow-[0_20px_40px_-30px_var(--glow)] scale-[1.01]' 
+                              : 'border-[color:var(--border)]/50 hover:border-[color:var(--border)]/70'
                           }`}
                           placeholder="your@email.com"
                         />
                         {focusedField === 'email' && (
-                          <div className="absolute inset-0 bg-gradient-to-r from-blue-500/5 to-purple-500/5 rounded-xl pointer-events-none"></div>
+                          <div className="absolute inset-0 bg-gradient-to-r from-[color:var(--accent)]/5 to-[color:var(--accent-2)]/5 rounded-xl pointer-events-none"></div>
                         )}
                       </div>
                     </div>
                   </div>
 
                   {/* Service and Subject Row */}
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                     <div className="group space-y-3">
-                      <label htmlFor="service" className="block text-sm font-bold text-gray-700">
+                      <label htmlFor="service" className="block text-sm font-bold text-muted">
                         Service Interested In
                       </label>
                       <div className="relative">
@@ -333,8 +333,8 @@ const Contact = () => {
                           onBlur={() => setFocusedField(null)}
                           className={`w-full px-4 py-4 glass rounded-xl border-2 transition-all duration-300 text-base font-medium ${
                             focusedField === 'service' 
-                              ? 'border-blue-500 shadow-lg shadow-blue-500/20 scale-[1.01]' 
-                              : 'border-gray-200/50 hover:border-gray-300/70'
+                              ? 'border-[color:var(--accent)] shadow-lg shadow-[0_20px_40px_-30px_var(--glow)] scale-[1.01]' 
+                              : 'border-[color:var(--border)]/50 hover:border-[color:var(--border)]/70'
                           }`}
                         >
                           <option value="">Select a service</option>
@@ -345,13 +345,13 @@ const Contact = () => {
                           ))}
                         </select>
                         {focusedField === 'service' && (
-                          <div className="absolute inset-0 bg-gradient-to-r from-blue-500/5 to-purple-500/5 rounded-xl pointer-events-none"></div>
+                          <div className="absolute inset-0 bg-gradient-to-r from-[color:var(--accent)]/5 to-[color:var(--accent-2)]/5 rounded-xl pointer-events-none"></div>
                         )}
                       </div>
                     </div>
                     
                     <div className="group space-y-3">
-                      <label htmlFor="subject" className="block text-sm font-bold text-gray-700">
+                      <label htmlFor="subject" className="block text-sm font-bold text-muted">
                         Project Subject *
                       </label>
                       <div className="relative">
@@ -366,13 +366,13 @@ const Contact = () => {
                           required
                           className={`w-full px-4 py-4 glass rounded-xl border-2 transition-all duration-300 text-base font-medium ${
                             focusedField === 'subject' 
-                              ? 'border-blue-500 shadow-lg shadow-blue-500/20 scale-[1.01]' 
-                              : 'border-gray-200/50 hover:border-gray-300/70'
+                              ? 'border-[color:var(--accent)] shadow-lg shadow-[0_20px_40px_-30px_var(--glow)] scale-[1.01]' 
+                              : 'border-[color:var(--border)]/50 hover:border-[color:var(--border)]/70'
                           }`}
                           placeholder="Brief project title"
                         />
                         {focusedField === 'subject' && (
-                          <div className="absolute inset-0 bg-gradient-to-r from-blue-500/5 to-purple-500/5 rounded-xl pointer-events-none"></div>
+                          <div className="absolute inset-0 bg-gradient-to-r from-[color:var(--accent)]/5 to-[color:var(--accent-2)]/5 rounded-xl pointer-events-none"></div>
                         )}
                       </div>
                     </div>
@@ -380,7 +380,7 @@ const Contact = () => {
 
                   {/* Message Field */}
                   <div className="group space-y-3">
-                    <label htmlFor="message" className="block text-sm font-bold text-gray-700">
+                    <label htmlFor="message" className="block text-sm font-bold text-muted">
                       Project Details & Requirements *
                     </label>
                     <div className="relative">
@@ -395,13 +395,13 @@ const Contact = () => {
                         rows={6}
                         className={`w-full px-4 py-4 glass rounded-xl border-2 transition-all duration-300 resize-none text-base font-medium ${
                           focusedField === 'message' 
-                            ? 'border-blue-500 shadow-lg shadow-blue-500/20 scale-[1.01]' 
-                            : 'border-gray-200/50 hover:border-gray-300/70'
+                            ? 'border-[color:var(--accent)] shadow-lg shadow-[0_20px_40px_-30px_var(--glow)] scale-[1.01]' 
+                            : 'border-[color:var(--border)]/50 hover:border-[color:var(--border)]/70'
                         }`}
                         placeholder="Tell me about your project goals, timeline, budget range, specific requirements, and any other details that would help me understand your needs better..."
                       />
                       {focusedField === 'message' && (
-                        <div className="absolute inset-0 bg-gradient-to-r from-blue-500/5 to-purple-500/5 rounded-xl pointer-events-none"></div>
+                        <div className="absolute inset-0 bg-gradient-to-r from-[color:var(--accent)]/5 to-[color:var(--accent-2)]/5 rounded-xl pointer-events-none"></div>
                       )}
                     </div>
                   </div>
@@ -411,14 +411,14 @@ const Contact = () => {
                     <button
                       type="submit"
                       disabled={isSubmitting}
-                      className={`group w-full rounded-2xl py-4 px-8 font-bold text-lg flex items-center justify-center gap-3 relative overflow-hidden shadow-xl transition-all duration-500 ${
+                      className={`group w-full rounded-2xl py-5 px-10 font-bold text-lg flex items-center justify-center gap-3 relative overflow-hidden shadow-xl transition-all duration-500 ${
                         isSubmitting 
                           ? 'bg-gray-400 cursor-not-allowed' 
-                          : 'btn-primary hover:shadow-blue-500/30 hover:scale-[1.02] hover:-translate-y-1'
+                          : 'btn-primary hover:shadow-[0_20px_40px_-30px_var(--glow)] hover:scale-[1.02] hover:-translate-y-1'
                       }`}
                     >
-                      <div className={`relative z-10 flex items-center justify-center w-8 h-8 bg-white/20 rounded-full transition-all duration-300 ${
-                        isSubmitting ? '' : 'group-hover:bg-white/30 group-hover:rotate-12'
+                      <div className={`relative z-10 flex items-center justify-center w-8 h-8 bg-[color:var(--bg-elev)]/20 rounded-full transition-all duration-300 ${
+                        isSubmitting ? '' : 'group-hover:bg-[color:var(--bg-elev)]/30 group-hover:rotate-12'
                       }`}>
                         {isSubmitting ? (
                           <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
@@ -433,9 +433,9 @@ const Contact = () => {
                       {/* Button Effects */}
                       {!isSubmitting && (
                         <>
-                          <div className="absolute inset-0 bg-gradient-to-r from-blue-700 to-purple-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                          <div className="absolute inset-0 bg-gradient-to-r from-[color:var(--accent-2)] to-[color:var(--accent-3)] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                           <div className="absolute inset-0 bg-gradient-to-r from-white/5 via-transparent to-white/5 -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
-                          <div className="absolute -inset-2 bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl blur-lg opacity-0 group-hover:opacity-50 transition-opacity duration-500 -z-10"></div>
+                          <div className="absolute -inset-2 bg-gradient-to-r from-[color:var(--accent)] to-[color:var(--accent-2)] rounded-2xl blur-lg opacity-0 group-hover:opacity-50 transition-opacity duration-500 -z-10"></div>
                         </>
                       )}
                     </button>
@@ -446,12 +446,12 @@ const Contact = () => {
                 {isSubmitted && (
                   <div className="mt-8 glass rounded-2xl p-6 border-2 border-green-300/50 bg-green-50/50 backdrop-blur-xl animate-fade-in">
                     <div className="flex items-center gap-4">
-                      <div className="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center shadow-lg">
+                      <div className="w-12 h-12 bg-[color:var(--accent-3)] rounded-full flex items-center justify-center shadow-lg">
                         <CheckCircle size={20} className="text-white" />
                       </div>
                       <div>
-                        <p className="font-bold text-green-800 text-lg">Message sent successfully!</p>
-                        <p className="text-green-700 text-sm">I'll get back to you within 24 hours. Thank you for reaching out!</p>
+                        <p className="font-bold text-[color:var(--accent-3)] text-lg">Message sent successfully!</p>
+                        <p className="text-[color:var(--accent-3)] text-sm">I'll get back to you within 24 hours. Thank you for reaching out!</p>
                       </div>
                     </div>
                   </div>
@@ -480,14 +480,14 @@ const Contact = () => {
           {/* Enhanced Sidebar */}
           <div className="xl:col-span-2 space-y-8">
             {/* Contact Information */}
-            <div className="glass rounded-2xl p-6 lg:p-8 backdrop-blur-xl border border-white/20 hover:border-white/30 transition-all duration-500">
-              <div className="flex items-center gap-4 mb-8">
-                <div className="w-12 h-12 bg-gradient-to-r from-green-500 to-emerald-600 rounded-2xl flex items-center justify-center shadow-lg">
+            <div className="glass rounded-2xl p-6 lg:p-8 backdrop-blur-xl border border-[color:var(--border)] hover:border-[color:var(--border)] transition-all duration-500">
+              <div className="flex items-center gap-6 mb-10">
+                <div className="w-12 h-12 bg-gradient-to-r from-[color:var(--accent-3)] to-[color:var(--accent)] rounded-2xl flex items-center justify-center shadow-lg">
                   <Phone size={20} className="text-white" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold text-gray-900">Quick Contact</h3>
-                  <p className="text-gray-600 text-sm">Direct ways to reach me</p>
+                  <h3 className="text-xl font-bold text-theme">Quick Contact</h3>
+                  <p className="text-muted text-sm">Direct ways to reach me</p>
                 </div>
               </div>
               
@@ -498,7 +498,7 @@ const Contact = () => {
                     <a
                       key={index}
                       href={info.link}
-                      className="group flex items-center gap-4 p-4 glass rounded-xl hover:shadow-lg transition-all duration-300 hover:scale-105 relative overflow-hidden backdrop-blur-sm border border-white/20 hover:border-white/30"
+                      className="group flex items-center gap-4 p-4 glass rounded-xl hover:shadow-lg transition-all duration-300 hover:scale-105 relative overflow-hidden backdrop-blur-sm border border-[color:var(--border)] hover:border-[color:var(--border)]"
                     >
                       <div className={`absolute inset-0 bg-gradient-to-r ${info.gradient} opacity-0 group-hover:opacity-5 transition-opacity duration-300 rounded-xl`}></div>
                       
@@ -508,15 +508,15 @@ const Contact = () => {
                       
                       <div className="flex-1 relative z-10 min-w-0">
                         <div className="flex items-center justify-between mb-1">
-                          <h4 className="font-bold text-gray-900 text-sm group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-blue-600 group-hover:to-purple-600 transition-all duration-300 truncate">
+                          <h4 className="font-bold text-theme text-sm group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-[color:var(--accent)] group-hover:to-[color:var(--accent-2)] transition-all duration-300 truncate">
                             {info.title}
                           </h4>
                           <span className="text-lg opacity-60 group-hover:animate-bounce flex-shrink-0">
                             {info.emoji}
                           </span>
                         </div>
-                        <p className="text-gray-800 font-semibold text-xs truncate">{info.details}</p>
-                        <p className="text-gray-600 text-xs truncate">{info.subtitle}</p>
+                        <p className="text-theme font-semibold text-xs truncate">{info.details}</p>
+                        <p className="text-muted text-xs truncate">{info.subtitle}</p>
                       </div>
                     </a>
                   );
@@ -524,19 +524,19 @@ const Contact = () => {
               </div>
 
               {/* Response Time */}
-              <div className="mt-8 pt-6 border-t border-gray-200/50">
+              <div className="mt-8 pt-6 border-t border-[color:var(--border)]/50">
                 <div className="flex items-center gap-3 mb-4">
-                  <div className="w-8 h-8 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-lg flex items-center justify-center">
-                    <Clock size={16} className="text-blue-500" />
+                  <div className="w-8 h-8 bg-gradient-to-r from-[color:var(--accent)]/20 to-[color:var(--accent-2)]/20 rounded-lg flex items-center justify-center">
+                    <Clock size={16} className="text-[color:var(--accent)]" />
                   </div>
-                  <h4 className="font-bold text-gray-900 text-base">Response Time</h4>
+                  <h4 className="font-bold text-theme text-base">Response Time</h4>
                 </div>
-                <div className="glass rounded-xl p-4 backdrop-blur-sm border border-white/20">
+                <div className="glass rounded-xl p-4 backdrop-blur-sm border border-[color:var(--border)]">
                   <div className="flex items-center gap-3 mb-2">
-                    <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
-                    <span className="text-sm font-bold text-gray-900">Usually within 2-6 hours</span>
+                    <div className="w-3 h-3 bg-[color:var(--accent-3)] rounded-full animate-pulse"></div>
+                    <span className="text-sm font-bold text-theme">Usually within 2-6 hours</span>
                   </div>
-                  <p className="text-gray-600 text-xs leading-relaxed">
+                  <p className="text-muted text-xs leading-relaxed">
                     I typically respond to all inquiries very quickly. For urgent projects, 
                     feel free to call me directly for immediate assistance.
                   </p>
@@ -545,30 +545,30 @@ const Contact = () => {
             </div>
 
             {/* Enhanced FAQ */}
-            <div className="glass rounded-2xl p-6 lg:p-8 backdrop-blur-xl border border-white/20 hover:border-white/30 transition-all duration-500">
-              <div className="flex items-center gap-3 mb-8">
-                <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-600 rounded-2xl flex items-center justify-center shadow-lg">
+            <div className="glass rounded-2xl p-6 lg:p-8 backdrop-blur-xl border border-[color:var(--border)] hover:border-[color:var(--border)] transition-all duration-500">
+              <div className="flex items-center gap-3 mb-10">
+                <div className="w-12 h-12 bg-gradient-to-r from-[color:var(--accent-2)] to-[color:var(--accent-3)] rounded-2xl flex items-center justify-center shadow-lg">
                   <Sparkles size={20} className="text-white" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold text-gray-900">Quick FAQ</h3>
-                  <p className="text-gray-600 text-sm">Common questions</p>
+                  <h3 className="text-xl font-bold text-theme">Quick FAQ</h3>
+                  <p className="text-muted text-sm">Common questions</p>
                 </div>
               </div>
               
               <div className="space-y-4">
                 {faqs.slice(0, 3).map((faq, index) => (
                   <details key={index} className="group">
-                    <summary className="flex items-center justify-between cursor-pointer p-4 rounded-xl hover:bg-gray-50/50 transition-all duration-300 backdrop-blur-sm border border-white/20 hover:border-white/30">
-                      <span className="font-semibold text-gray-900 text-sm pr-2">
+                    <summary className="flex items-center justify-between cursor-pointer p-4 rounded-xl hover:bg-[color:var(--panel)]/50 transition-all duration-300 backdrop-blur-sm border border-[color:var(--border)] hover:border-[color:var(--border)]">
+                      <span className="font-semibold text-theme text-sm pr-2">
                         {faq.question}
                       </span>
-                      <div className="flex-shrink-0 w-6 h-6 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-full flex items-center justify-center group-open:rotate-180 transition-transform duration-300">
+                      <div className="flex-shrink-0 w-6 h-6 bg-gradient-to-r from-[color:var(--accent)]/20 to-[color:var(--accent-2)]/20 rounded-full flex items-center justify-center group-open:rotate-180 transition-transform duration-300">
                         <div className="w-3 h-3 border-t-2 border-r-2 border-gray-600 rotate-45 transform translate-y-0.5"></div>
                       </div>
                     </summary>
                     <div className="mt-3 px-4 pb-4">
-                      <p className="text-gray-600 text-xs leading-relaxed">
+                      <p className="text-muted text-xs leading-relaxed">
                         {faq.answer}
                       </p>
                     </div>
@@ -581,38 +581,38 @@ const Contact = () => {
 
         {/* Enhanced Call to Action */}
         <div className="mt-16 sm:mt-20 lg:mt-24">
-          <div className="glass rounded-2xl p-8 lg:p-12 text-center backdrop-blur-xl border border-white/20 relative overflow-hidden">
-            <div className="absolute inset-0 bg-gradient-to-br from-blue-600/3 via-purple-600/3 to-pink-600/3"></div>
-            <div className="absolute top-0 left-1/4 w-32 h-32 bg-gradient-to-r from-green-400/15 to-blue-400/15 rounded-full blur-3xl"></div>
-            <div className="absolute bottom-0 right-1/4 w-40 h-40 bg-gradient-to-r from-purple-400/15 to-pink-400/15 rounded-full blur-3xl"></div>
+          <div className="glass rounded-2xl p-8 lg:p-12 text-center backdrop-blur-xl border border-[color:var(--border)] relative overflow-hidden">
+            <div className="absolute inset-0 bg-gradient-to-br from-[color:var(--accent)]/6 via-[color:var(--accent-2)]/6 to-[color:var(--accent-3)]/6"></div>
+            <div className="absolute top-0 left-1/4 w-32 h-32 bg-gradient-to-r from-[color:var(--accent-3)]/15 to-[color:var(--accent)]/15 rounded-full blur-3xl"></div>
+            <div className="absolute bottom-0 right-1/4 w-40 h-40 bg-gradient-to-r from-[color:var(--accent-2)]/15 to-[color:var(--accent-3)]/15 rounded-full blur-3xl"></div>
             
             <div className="relative z-10">
-              <div className="inline-flex items-center gap-3 glass rounded-full px-6 py-3 mb-8">
-                <Rocket size={18} className="text-green-500 animate-pulse" />
-                <span className="text-sm font-semibold text-gray-700">Ready to Start?</span>
+              <div className="inline-flex items-center gap-3 glass rounded-full px-6 py-3 mb-10">
+                <Rocket size={18} className="text-[color:var(--accent-3)] animate-pulse" />
+                <span className="text-sm font-semibold text-muted">Ready to Start?</span>
               </div>
               
-              <h3 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+              <h3 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-theme mb-6">
                 Prefer a <span className="gradient-text">Quick Chat</span>?
               </h3>
               
-              <p className="text-base sm:text-lg lg:text-xl text-gray-600 mb-10 max-w-2xl mx-auto leading-relaxed">
+              <p className="text-base sm:text-lg lg:text-xl text-muted mb-10 max-w-2xl mx-auto leading-relaxed">
                 Sometimes a quick conversation can clarify everything. I'm available for 
-                <span className="font-semibold text-gray-800"> a 15-minute consultation</span> to discuss your project needs and answer any questions.
+                <span className="font-semibold text-theme"> a 15-minute consultation</span> to discuss your project needs and answer any questions.
               </p>
               
               <a
                 href="tel:+9779842747572"
-                className="group inline-flex items-center gap-4 bg-gradient-to-r from-green-600 via-emerald-600 to-blue-600 text-white px-8 py-4 rounded-2xl font-bold text-lg shadow-xl hover:shadow-green-500/30 transition-all duration-500 hover:scale-105 hover:-translate-y-1 focus:outline-none focus:ring-4 focus:ring-green-500/30 relative overflow-hidden"
+                className="group inline-flex items-center gap-4 bg-gradient-to-r from-[color:var(--accent-3)] via-[color:var(--accent)] to-[color:var(--accent-2)] text-white px-8 py-4 rounded-2xl font-bold text-lg shadow-xl hover:shadow-[0_20px_40px_-30px_var(--glow)] transition-all duration-500 hover:scale-105 hover:-translate-y-1 focus:outline-none focus:ring-4 focus:ring-[color:var(--accent)]/30 relative overflow-hidden"
               >
-                <div className="relative z-10 flex items-center justify-center w-8 h-8 bg-white/20 rounded-full group-hover:bg-white/30 transition-all duration-300 group-hover:rotate-12">
+                <div className="relative z-10 flex items-center justify-center w-8 h-8 bg-[color:var(--bg-elev)]/20 rounded-full group-hover:bg-[color:var(--bg-elev)]/30 transition-all duration-300 group-hover:rotate-12">
                   <Phone size={18} />
                 </div>
                 <span className="relative z-10 tracking-wide">Schedule a Call</span>
                 
-                <div className="absolute inset-0 bg-gradient-to-r from-green-700 via-emerald-700 to-blue-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div className="absolute inset-0 bg-gradient-to-r from-[color:var(--accent-3)] via-[color:var(--accent)] to-[color:var(--accent-2)] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 <div className="absolute inset-0 bg-gradient-to-r from-white/5 via-transparent to-white/5 -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
-                <div className="absolute -inset-2 bg-gradient-to-r from-green-600 to-blue-600 rounded-2xl blur-lg opacity-0 group-hover:opacity-40 transition-opacity duration-500 -z-10"></div>
+                <div className="absolute -inset-2 bg-gradient-to-r from-[color:var(--accent-3)] to-[color:var(--accent-2)] rounded-2xl blur-lg opacity-0 group-hover:opacity-40 transition-opacity duration-500 -z-10"></div>
               </a>
             </div>
           </div>

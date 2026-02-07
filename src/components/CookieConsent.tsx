@@ -63,10 +63,10 @@ export default function CookieConsent() {
     return (
       <button
         onClick={handleReset}
-        className="fixed bottom-4 left-4 z-50 p-3 bg-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-200 group"
+        className="fixed bottom-4 left-4 z-50 p-3 bg-[color:var(--panel)] rounded-full shadow-lg hover:shadow-xl transition-all duration-300 border border-[color:var(--border)] group"
         aria-label="Cookie settings"
       >
-        <Cookie className="w-5 h-5 text-gray-600 group-hover:text-blue-600 transition-colors" />
+        <Cookie className="w-5 h-5 text-muted group-hover:text-theme transition-colors" />
       </button>
     );
   }
@@ -74,9 +74,9 @@ export default function CookieConsent() {
   return (
     <div className="fixed inset-0 z-50 flex items-end justify-center p-4 pointer-events-none">
       <div className="pointer-events-auto w-full max-w-2xl">
-        <div className="bg-white rounded-2xl shadow-2xl border border-gray-200 overflow-hidden">
+        <div className="bg-[color:var(--bg-elev)] rounded-2xl shadow-2xl border border-[color:var(--border)] overflow-hidden">
           {/* Header */}
-          <div className="bg-gradient-to-r from-blue-600 to-purple-600 px-6 py-4">
+          <div className="bg-gradient-to-r from-[color:var(--accent)] to-[color:var(--accent-2)] px-6 py-4">
             <div className="flex items-center justify-between">
               <div className="flex items-center space-x-3">
                 <Shield className="w-6 h-6 text-white" />
@@ -94,30 +94,30 @@ export default function CookieConsent() {
 
           {/* Content */}
           <div className="px-6 py-5">
-            <p className="text-gray-700 text-sm leading-relaxed mb-4">
+            <p className="text-muted text-sm leading-relaxed mb-4">
               We use cookies and similar technologies to enhance your browsing experience, analyze site traffic, 
               and personalize content. By clicking "Accept All", you consent to our use of cookies.
             </p>
 
             {/* Details Section */}
             {showDetails && (
-              <div className="mb-4 p-4 bg-gray-50 rounded-lg border border-gray-200">
-                <h4 className="font-semibold text-gray-900 mb-3 flex items-center">
+              <div className="mb-4 p-4 bg-[color:var(--panel)] rounded-lg border border-[color:var(--border)]">
+                <h4 className="font-semibold text-theme mb-3 flex items-center">
                   <Info className="w-4 h-4 mr-2" />
                   Cookie Categories
                 </h4>
                 <div className="space-y-3 text-sm">
                   <div>
-                    <p className="font-medium text-gray-900">Essential Cookies</p>
-                    <p className="text-gray-600">Required for basic site functionality and security. Always enabled.</p>
+                    <p className="font-medium text-theme">Essential Cookies</p>
+                    <p className="text-muted">Required for basic site functionality and security. Always enabled.</p>
                   </div>
                   <div>
-                    <p className="font-medium text-gray-900">Analytics Cookies</p>
-                    <p className="text-gray-600">Help us understand how visitors interact with our website (Google Analytics).</p>
+                    <p className="font-medium text-theme">Analytics Cookies</p>
+                    <p className="text-muted">Help us understand how visitors interact with our website (Google Analytics).</p>
                   </div>
                   <div>
-                    <p className="font-medium text-gray-900">Marketing Cookies</p>
-                    <p className="text-gray-600">Used to deliver personalized ads and track campaign performance.</p>
+                    <p className="font-medium text-theme">Marketing Cookies</p>
+                    <p className="text-muted">Used to deliver personalized ads and track campaign performance.</p>
                   </div>
                 </div>
               </div>
@@ -125,7 +125,7 @@ export default function CookieConsent() {
 
             <button
               onClick={() => setShowDetails(!showDetails)}
-              className="text-blue-600 hover:text-blue-700 text-sm font-medium mb-4 flex items-center"
+              className="text-[color:var(--accent)] hover:text-[color:var(--accent-2)] text-sm font-medium mb-4 flex items-center"
             >
               <Info className="w-4 h-4 mr-1" />
               {showDetails ? 'Hide Details' : 'Show Details'}
@@ -135,26 +135,26 @@ export default function CookieConsent() {
             <div className="flex flex-col sm:flex-row gap-3">
               <button
                 onClick={handleAccept}
-                className="flex-1 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold py-3 px-6 rounded-xl hover:shadow-lg transition-all duration-300 transform hover:-translate-y-0.5"
+                className="flex-1 btn-primary font-semibold py-3 px-6 rounded-xl hover:shadow-lg transition-all duration-300 transform hover:-translate-y-0.5"
               >
                 Accept All
               </button>
               <button
                 onClick={handleReject}
-                className="flex-1 bg-gray-100 text-gray-700 font-semibold py-3 px-6 rounded-xl hover:bg-gray-200 transition-all duration-300"
+                className="flex-1 btn-ghost text-muted font-semibold py-3 px-6 rounded-xl transition-all duration-300"
               >
                 Reject All
               </button>
             </div>
 
             {/* Privacy Policy Link */}
-            <p className="text-xs text-gray-500 mt-4 text-center">
+            <p className="text-xs text-muted mt-4 text-center">
               Read our{' '}
-              <a href="/privacy" className="text-blue-600 hover:text-blue-700 underline">
+              <a href="/privacy" className="text-[color:var(--accent)] hover:text-[color:var(--accent-2)] underline">
                 Privacy Policy
               </a>{' '}
               and{' '}
-              <a href="/terms" className="text-blue-600 hover:text-blue-700 underline">
+              <a href="/terms" className="text-[color:var(--accent)] hover:text-[color:var(--accent-2)] underline">
                 Terms of Service
               </a>
             </p>

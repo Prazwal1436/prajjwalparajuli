@@ -76,49 +76,49 @@ export default function TrustSignals() {
   ];
 
   return (
-    <section className="py-20 bg-white">
+    <section className="py-24 lg:py-40 grid-surface">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Trust Header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-20">
           <div className="flex items-center justify-center gap-3 mb-4">
-            <Shield className="h-8 w-8 text-green-600" />
-            <h2 className="text-3xl font-bold text-gray-900">Trusted by Businesses Worldwide</h2>
+            <Shield className="h-8 w-8 text-[color:var(--accent-3)]" />
+            <h2 className="text-3xl font-bold text-theme">Trusted by Businesses Worldwide</h2>
           </div>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-muted max-w-3xl mx-auto">
             Join 150+ satisfied clients who saved thousands while getting premium quality development
           </p>
         </div>
 
         {/* Stats Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-16">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-10 mb-20">
           {stats.map((stat, index) => {
             const IconComponent = stat.icon;
             return (
               <div key={index} className="text-center">
-                <div className="bg-blue-50 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
-                  <IconComponent className="h-8 w-8 text-blue-600" />
+                <div className="bg-[color:var(--panel)] border border-[color:var(--border)] rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                  <IconComponent className="h-8 w-8 text-[color:var(--accent)]" />
                 </div>
-                <div className="text-3xl font-bold text-gray-900 mb-1">{stat.value}</div>
-                <div className="text-gray-600">{stat.label}</div>
+                <div className="text-3xl font-bold text-theme mb-1">{stat.value}</div>
+                <div className="text-muted">{stat.label}</div>
               </div>
             );
           })}
         </div>
 
         {/* Guarantees */}
-        <div className="bg-gradient-to-br from-green-50 to-blue-50 rounded-2xl p-8 mb-16">
-          <h3 className="text-2xl font-bold text-center text-gray-900 mb-8">Our Guarantees</h3>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="bg-[color:var(--panel)] rounded-2xl p-8 mb-20 border border-[color:var(--border)]">
+          <h3 className="text-2xl font-bold text-center text-theme mb-10">Our Guarantees</h3>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10">
             {guarantees.map((guarantee, index) => {
               const IconComponent = guarantee.icon;
               return (
                 <div key={index} className="text-center">
-                  <div className="bg-white rounded-xl p-6 shadow-md">
-                    <div className="bg-green-100 rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-4">
-                      <IconComponent className="h-6 w-6 text-green-600" />
+                  <div className="bg-[color:var(--bg-elev)] rounded-xl p-6 shadow-md border border-[color:var(--border)]">
+                    <div className="bg-[color:var(--accent-3)]/10 rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-4">
+                      <IconComponent className="h-6 w-6 text-[color:var(--accent-3)]" />
                     </div>
-                    <h4 className="font-semibold text-gray-900 mb-2">{guarantee.title}</h4>
-                    <p className="text-sm text-gray-600">{guarantee.description}</p>
+                    <h4 className="font-semibold text-theme mb-2">{guarantee.title}</h4>
+                    <p className="text-sm text-muted">{guarantee.description}</p>
                   </div>
                 </div>
               );
@@ -127,33 +127,33 @@ export default function TrustSignals() {
         </div>
 
         {/* Client Testimonials with Savings */}
-        <div className="mb-16">
-          <h3 className="text-2xl font-bold text-center text-gray-900 mb-8">Client Success Stories</h3>
-          <div className="grid md:grid-cols-3 gap-8">
+        <div className="mb-20">
+          <h3 className="text-2xl font-bold text-center text-theme mb-10">Client Success Stories</h3>
+          <div className="grid md:grid-cols-3 gap-10">
             {testimonials.map((testimonial, index) => (
-              <div key={index} className="bg-white rounded-xl shadow-lg p-6 border">
+              <div key={index} className="bg-[color:var(--bg-elev)] rounded-xl shadow-lg p-6 border border-[color:var(--border)]">
                 {/* Rating Stars */}
                 <div className="flex items-center gap-1 mb-4">
                   {[...Array(testimonial.rating)].map((_, i) => (
-                    <Star key={i} className="h-5 w-5 fill-yellow-400 text-yellow-400" />
+                    <Star key={i} className="h-5 w-5 fill-[color:var(--accent-3)] text-[color:var(--accent-3)]" />
                   ))}
                 </div>
                 
                 {/* Savings Badge */}
-                <div className="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium mb-4 inline-block">
+                <div className="bg-[color:var(--accent-3)]/15 text-[color:var(--accent-3)] px-3 py-1 rounded-full text-sm font-medium mb-4 inline-block">
                   Saved {testimonial.savings}
                 </div>
                 
                 {/* Quote */}
-                <blockquote className="text-gray-700 mb-4 italic">
+                <blockquote className="text-muted mb-4 italic">
                   "{testimonial.content}"
                 </blockquote>
                 
                 {/* Author */}
                 <div className="border-t pt-4">
-                  <div className="font-semibold text-gray-900">{testimonial.name}</div>
-                  <div className="text-sm text-gray-600">{testimonial.role}</div>
-                  <div className="text-sm text-blue-600 font-medium mt-1">{testimonial.project}</div>
+                  <div className="font-semibold text-theme">{testimonial.name}</div>
+                  <div className="text-sm text-muted">{testimonial.role}</div>
+                  <div className="text-sm text-[color:var(--accent)] font-medium mt-1">{testimonial.project}</div>
                 </div>
               </div>
             ))}
@@ -161,16 +161,16 @@ export default function TrustSignals() {
         </div>
 
         {/* Certifications */}
-        <div className="bg-gray-50 rounded-2xl p-8 mb-16">
-          <h3 className="text-2xl font-bold text-center text-gray-900 mb-8">Certifications & Skills</h3>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="bg-[color:var(--panel)] rounded-2xl p-8 mb-20 border border-[color:var(--border)]">
+          <h3 className="text-2xl font-bold text-center text-theme mb-10">Certifications & Skills</h3>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10">
             {certifications.map((cert, index) => (
-              <div key={index} className="bg-white rounded-lg p-4 text-center shadow-sm">
-                <div className="bg-blue-100 rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-3">
-                  <Award className="h-6 w-6 text-blue-600" />
+              <div key={index} className="bg-[color:var(--bg-elev)] rounded-lg p-4 text-center shadow-sm border border-[color:var(--border)]">
+                <div className="bg-[color:var(--accent)]/10 rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-3">
+                  <Award className="h-6 w-6 text-[color:var(--accent)]" />
                 </div>
-                <h4 className="font-semibold text-gray-900 text-sm mb-1">{cert.name}</h4>
-                <p className="text-xs text-gray-600">{cert.issuer} • {cert.year}</p>
+                <h4 className="font-semibold text-theme text-sm mb-1">{cert.name}</h4>
+                <p className="text-xs text-muted">{cert.issuer} • {cert.year}</p>
               </div>
             ))}
           </div>
@@ -178,26 +178,26 @@ export default function TrustSignals() {
 
         {/* Security & Payment */}
         <div className="text-center">
-          <h3 className="text-xl font-bold text-gray-900 mb-6">Secure & Flexible Payments</h3>
-          <div className="flex items-center justify-center gap-8 mb-6">
+          <h3 className="text-xl font-bold text-theme mb-6">Secure & Flexible Payments</h3>
+          <div className="flex items-center justify-center gap-10 mb-6">
             {paymentMethods.map((method, index) => (
               <div key={index} className="flex items-center gap-2">
-                <Shield className="h-5 w-5 text-green-600" />
-                <span className="text-gray-700 font-medium">{method.name}</span>
+                <Shield className="h-5 w-5 text-[color:var(--accent-3)]" />
+                <span className="text-muted font-medium">{method.name}</span>
               </div>
             ))}
           </div>
-          <div className="flex items-center justify-center gap-4 text-sm text-gray-600">
+          <div className="flex items-center justify-center gap-10 text-sm text-muted">
             <div className="flex items-center gap-2">
-              <CheckCircle className="h-4 w-4 text-green-600" />
+              <CheckCircle className="h-4 w-4 text-[color:var(--accent-3)]" />
               <span>SSL Encrypted</span>
             </div>
             <div className="flex items-center gap-2">
-              <CheckCircle className="h-4 w-4 text-green-600" />
+              <CheckCircle className="h-4 w-4 text-[color:var(--accent-3)]" />
               <span>Milestone Payments</span>
             </div>
             <div className="flex items-center gap-2">
-              <CheckCircle className="h-4 w-4 text-green-600" />
+              <CheckCircle className="h-4 w-4 text-[color:var(--accent-3)]" />
               <span>Escrow Available</span>
             </div>
           </div>
@@ -205,15 +205,15 @@ export default function TrustSignals() {
 
         {/* Risk-Free CTA */}
         <div className="text-center mt-12">
-          <div className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl p-8 text-white">
+          <div className="bg-gradient-to-r from-[color:var(--accent)] to-[color:var(--accent-2)] rounded-2xl p-8 text-white">
             <h3 className="text-2xl font-bold mb-4">Ready to Save 80-90% on Development Costs?</h3>
             <p className="text-lg mb-6 opacity-90">
               Join 150+ businesses that chose quality without the premium price
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <div className="flex flex-col sm:flex-row gap-10 justify-center items-center">
               <a
                 href="#contact"
-                className="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
+                className="bg-[color:var(--bg-elev)] text-[color:var(--accent)] px-10 py-4 rounded-lg font-semibold hover:bg-[color:var(--panel)] transition-colors"
               >
                 Start Your Project - Risk Free
               </a>

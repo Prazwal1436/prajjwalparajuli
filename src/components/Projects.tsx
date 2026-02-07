@@ -110,10 +110,10 @@ const Projects = () => {
   ];
 
   const filters = [
-    { key: 'all', label: 'All Projects', count: projects.length, icon: Globe, color: 'from-blue-500 to-purple-600' },
-    { key: 'web-app', label: 'Web Apps', count: projects.filter(p => p.category === 'web-app').length, icon: Code2, color: 'from-green-500 to-emerald-600' },
-    { key: 'website', label: 'Websites', count: projects.filter(p => p.category === 'website').length, icon: Palette, color: 'from-purple-500 to-pink-600' },
-    { key: 'dashboard', label: 'Dashboards', count: projects.filter(p => p.category === 'dashboard').length, icon: BarChart3, color: 'from-orange-500 to-red-600' }
+    { key: 'all', label: 'All Projects', count: projects.length, icon: Globe, color: 'from-[color:var(--accent)] to-[color:var(--accent-2)]' },
+    { key: 'web-app', label: 'Web Apps', count: projects.filter(p => p.category === 'web-app').length, icon: Code2, color: 'from-[color:var(--accent-2)] to-[color:var(--accent-3)]' },
+    { key: 'website', label: 'Websites', count: projects.filter(p => p.category === 'website').length, icon: Palette, color: 'from-[color:var(--accent-3)] to-[color:var(--accent)]' },
+    { key: 'dashboard', label: 'Dashboards', count: projects.filter(p => p.category === 'dashboard').length, icon: BarChart3, color: 'from-[color:var(--accent)] to-[color:var(--accent-3)]' }
   ];
 
   useEffect(() => {
@@ -140,30 +140,30 @@ const Projects = () => {
   const featuredProjects = projects.filter(project => project.featured);
 
   return (
-    <section ref={sectionRef} id="projects" className="relative py-20 lg:py-32 overflow-hidden">
-      {/* Clean Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-slate-50 via-blue-50/30 to-indigo-50/20"></div>
+    <section ref={sectionRef} id="projects" className="relative py-24 lg:py-40 overflow-hidden grid-surface">
+      {/* Ambient Background */}
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,color-mix(in_srgb,var(--accent)_14%,transparent),transparent_55%)]"></div>
       
       {/* Subtle Background Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-1/4 right-1/4 w-64 h-64 bg-gradient-to-r from-blue-400/8 to-purple-400/8 rounded-full blur-3xl animate-pulse" style={{ animationDuration: '8s' }}></div>
-        <div className="absolute bottom-1/4 left-1/4 w-80 h-80 bg-gradient-to-r from-purple-400/6 to-pink-400/6 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '4s', animationDuration: '10s' }}></div>
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-72 h-72 bg-gradient-to-r from-emerald-400/6 to-cyan-400/6 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s', animationDuration: '12s' }}></div>
+        <div className="absolute top-1/4 right-1/4 w-64 h-64 bg-gradient-to-r from-[color:var(--accent)]/10 to-[color:var(--accent-2)]/10 rounded-full blur-3xl animate-pulse" style={{ animationDuration: '8s' }}></div>
+        <div className="absolute bottom-1/4 left-1/4 w-80 h-80 bg-gradient-to-r from-[color:var(--accent-2)]/8 to-[color:var(--accent-3)]/8 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '4s', animationDuration: '10s' }}></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-72 h-72 bg-gradient-to-r from-[color:var(--accent-3)]/8 to-[color:var(--accent)]/8 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s', animationDuration: '12s' }}></div>
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         {/* Clean Header */}
-        <div className="text-center mb-16 sm:mb-20">
-          <div className="inline-flex items-center gap-3 glass rounded-full px-6 py-3 mb-8 backdrop-blur-md border border-white/30 group hover:scale-105 transition-all duration-300">
-            <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center">
+        <div className="text-center mb-20 sm:mb-20">
+          <div className="inline-flex items-center gap-3 glass rounded-full px-6 py-3 mb-10 backdrop-blur-md border border-[color:var(--border)] group hover:scale-105 transition-all duration-300">
+            <div className="w-8 h-8 bg-gradient-to-r from-[color:var(--accent)] to-[color:var(--accent-2)] rounded-full flex items-center justify-center">
               <Rocket size={16} className="text-white" />
             </div>
-            <span className="text-sm font-semibold text-gray-700">Portfolio Showcase</span>
+            <span className="text-sm font-semibold text-muted">Portfolio Showcase</span>
           </div>
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
-            Featured <span className="gradient-text bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">Projects</span>
+          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-theme mb-6 leading-tight">
+            Featured <span className="gradient-text bg-gradient-to-r from-[color:var(--accent)] via-[color:var(--accent-2)] to-[color:var(--accent-3)] bg-clip-text text-transparent">Projects</span>
           </h2>
-          <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-lg sm:text-xl text-muted max-w-3xl mx-auto leading-relaxed">
             Discover my latest work spanning full-stack applications, digital marketing solutions, 
             and innovative web experiences that deliver exceptional results.
           </p>
@@ -171,23 +171,23 @@ const Projects = () => {
 
         {/* Featured Projects */}
         <div className="mb-20 sm:mb-24">
-          <div className="flex items-center justify-center mb-12">
-            <div className="flex items-center gap-4 glass rounded-2xl px-6 py-4 backdrop-blur-md border border-white/30">
-              <div className="w-10 h-10 bg-gradient-to-r from-yellow-500 to-orange-600 rounded-xl flex items-center justify-center shadow-lg">
+          <div className="flex items-center justify-center mb-16">
+            <div className="flex items-center gap-10 glass rounded-2xl px-6 py-4 backdrop-blur-md border border-[color:var(--border)]">
+              <div className="w-10 h-10 bg-gradient-to-r from-[color:var(--accent-2)] to-[color:var(--accent-3)] rounded-xl flex items-center justify-center shadow-lg">
                 <Trophy size={20} className="text-white" />
               </div>
               <div>
-                <h3 className="text-xl font-bold text-gray-900">Featured Work</h3>
+                <h3 className="text-xl font-bold text-theme">Featured Work</h3>
                 <div className="flex gap-1 mt-1">
                   {[...Array(5)].map((_, i) => (
-                    <Star key={i} size={14} className="text-yellow-400 fill-current" />
+                    <Star key={i} size={14} className="text-[color:var(--accent-3)] fill-current" />
                   ))}
                 </div>
               </div>
             </div>
           </div>
           
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-12">
             {featuredProjects.map((project) => {
               const hasShareableImage = Boolean(project.image) && !project.image.includes('/api/placeholder');
               const hasLiveUrl = Boolean(project.liveUrl);
@@ -197,13 +197,13 @@ const Projects = () => {
               return (
                 <div 
                   key={project.id} 
-                  className="group glass rounded-2xl overflow-hidden hover:shadow-xl transition-all duration-500 hover:scale-[1.02] hover:-translate-y-2 backdrop-blur-md border border-white/30"
+                  className="group glass rounded-2xl overflow-hidden hover:shadow-xl transition-all duration-500 hover:scale-[1.02] hover:-translate-y-2 backdrop-blur-md border border-[color:var(--border)]"
                   onMouseEnter={() => setHoveredProject(project.id)}
                   onMouseLeave={() => setHoveredProject(null)}
                 >
                   {/* Project Image/Preview */}
                   <div className="relative overflow-hidden rounded-t-2xl">
-                    <div className="aspect-video bg-gradient-to-br from-blue-100 via-purple-100 to-pink-100 relative">
+                    <div className="aspect-video bg-[color:var(--panel)] relative">
                       {/* Website Screenshot */}
                       {hasShareableImage && (
                         <img 
@@ -228,7 +228,7 @@ const Projects = () => {
                           {project.technologies.slice(0, 3).map((tech) => (
                             <div
                               key={tech}
-                              className="glass rounded-lg px-3 py-1 backdrop-blur-sm border border-white/30"
+                              className="glass rounded-lg px-3 py-1 backdrop-blur-sm border border-[color:var(--border)]"
                             >
                               <span className="text-xs font-semibold text-white drop-shadow-sm">{tech}</span>
                             </div>
@@ -239,8 +239,8 @@ const Projects = () => {
                     
                     {/* Confidential Badge */}
                     {isPrivacyRedirect && (
-                      <div className="absolute top-4 left-4 flex items-center gap-2 glass rounded-full px-3 py-2 backdrop-blur-sm border border-white/30">
-                        <span className="text-xs font-bold text-gray-700">Confidential Project</span>
+                      <div className="absolute top-4 left-4 flex items-center gap-2 glass rounded-full px-3 py-2 backdrop-blur-sm border border-[color:var(--border)]">
+                        <span className="text-xs font-bold text-muted">Confidential Project</span>
                       </div>
                     )}
 
@@ -248,11 +248,11 @@ const Projects = () => {
                     <div className={`absolute inset-0 bg-black/70 transition-all duration-300 flex items-center justify-center ${
                       hoveredProject === project.id ? 'opacity-100' : 'opacity-0'
                     }`}>
-                      <div className="flex gap-4 transform scale-75 group-hover:scale-100 transition-transform duration-300">
+                      <div className="flex gap-10 transform scale-75 group-hover:scale-100 transition-transform duration-300">
                         {isPrivacyRedirect ? (
                           <Link
                             href="/projects/privacy"
-                            className="glass text-white p-4 rounded-xl hover:scale-110 transition-all duration-300 backdrop-blur-sm border border-white/30"
+                            className="glass text-white p-4 rounded-xl hover:scale-110 transition-all duration-300 backdrop-blur-sm border border-[color:var(--border)]"
                           >
                             <ExternalLink size={24} />
                           </Link>
@@ -261,7 +261,7 @@ const Projects = () => {
                             href={projectHref}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="glass text-white p-4 rounded-xl hover:scale-110 transition-all duration-300 backdrop-blur-sm border border-white/30"
+                            className="glass text-white p-4 rounded-xl hover:scale-110 transition-all duration-300 backdrop-blur-sm border border-[color:var(--border)]"
                           >
                             <ExternalLink size={24} />
                           </a>
@@ -270,17 +270,17 @@ const Projects = () => {
                     </div>
                     
                     {/* Featured Badge */}
-                    <div className="absolute top-4 right-4 flex items-center gap-2 glass rounded-full px-3 py-2 backdrop-blur-sm border border-white/30">
-                      <Star size={14} className="text-yellow-400 fill-current" />
-                      <span className="text-xs font-bold text-gray-700">Featured</span>
+                    <div className="absolute top-4 right-4 flex items-center gap-2 glass rounded-full px-3 py-2 backdrop-blur-sm border border-[color:var(--border)]">
+                      <Star size={14} className="text-[color:var(--accent-3)] fill-current" />
+                      <span className="text-xs font-bold text-muted">Featured</span>
                     </div>
                   </div>
                   
                   <div className="p-6 lg:p-8">
-                    <h4 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-4 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-blue-600 group-hover:to-purple-600 transition-all duration-300">
+                    <h4 className="text-2xl lg:text-3xl font-bold text-theme mb-4 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-[color:var(--accent)] group-hover:to-[color:var(--accent-2)] transition-all duration-300">
                       {project.title}
                     </h4>
-                    <p className="text-gray-600 text-base mb-6 leading-relaxed">
+                    <p className="text-muted text-base mb-6 leading-relaxed">
                       {project.description}
                     </p>
                     
@@ -289,34 +289,34 @@ const Projects = () => {
                       {project.technologies.slice(0, 4).map((tech) => (
                         <span
                           key={tech}
-                          className="glass rounded-lg px-3 py-2 text-sm font-medium text-gray-700 hover:text-blue-600 transition-colors duration-300 backdrop-blur-sm border border-white/20"
-                        >
-                          {tech}
-                        </span>
-                      ))}
-                      {project.technologies.length > 4 && (
-                        <span className="glass rounded-lg px-3 py-2 text-sm font-medium text-blue-600 backdrop-blur-sm border border-white/20">
+                        className="glass rounded-lg px-3 py-2 text-sm font-medium text-muted hover:text-theme transition-colors duration-300 backdrop-blur-sm border border-[color:var(--border)]"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                    {project.technologies.length > 4 && (
+                        <span className="glass rounded-lg px-3 py-2 text-sm font-medium text-[color:var(--accent)] backdrop-blur-sm border border-[color:var(--border)]">
                           +{project.technologies.length - 4} more
                         </span>
                       )}
                     </div>
 
                     {/* Metrics */}
-                    <div className="grid grid-cols-3 gap-4 py-4 mb-6 border-t border-b border-gray-200/50">
+                    <div className="grid grid-cols-3 gap-10 py-4 mb-6 border-t border-b border-[color:var(--border)]">
                       {Object.entries(project.metrics).map(([key, value]) => (
                         <div key={key} className="text-center">
-                          <div className="text-sm font-bold text-gray-900 mb-1">{value}</div>
-                          <div className="text-xs text-gray-500 capitalize">{key.replace(/([A-Z])/g, ' $1').trim()}</div>
+                          <div className="text-sm font-bold text-theme mb-1">{value}</div>
+                          <div className="text-xs text-muted capitalize">{key.replace(/([A-Z])/g, ' $1').trim()}</div>
                         </div>
                       ))}
                     </div>
 
                     {/* Action Buttons */}
-                    <div className="flex gap-4">
+                    <div className="flex gap-10">
                       {isPrivacyRedirect ? (
                         <Link
                           href="/projects/privacy"
-                          className="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white py-3 px-6 rounded-xl font-semibold text-sm shadow-lg hover:shadow-blue-500/30 transition-all duration-300 hover:scale-105 flex items-center justify-center gap-2"
+                          className="w-full btn-primary text-white py-3 px-6 rounded-xl font-semibold text-sm shadow-lg transition-all duration-300 hover:scale-105 flex items-center justify-center gap-2"
                         >
                           <Eye size={16} />
                           <span>View Privacy Notice</span>
@@ -326,7 +326,7 @@ const Projects = () => {
                           href={projectHref ?? '#'}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white py-3 px-6 rounded-xl font-semibold text-sm shadow-lg hover:shadow-blue-500/30 transition-all duration-300 hover:scale-105 flex items-center justify-center gap-2"
+                          className="w-full btn-primary text-white py-3 px-6 rounded-xl font-semibold text-sm shadow-lg transition-all duration-300 hover:scale-105 flex items-center justify-center gap-2"
                         >
                           <Eye size={16} />
                           <span>View Live Site</span>
@@ -341,15 +341,15 @@ const Projects = () => {
         </div>
 
         {/* Filter Tabs */}
-        <div className="flex flex-col items-center mb-16 sm:mb-20">
-          <div className="flex items-center gap-3 glass rounded-2xl px-6 py-3 mb-8 backdrop-blur-md border border-white/30">
-            <div className="w-8 h-8 bg-gradient-to-r from-purple-500 to-pink-600 rounded-lg flex items-center justify-center">
+        <div className="flex flex-col items-center mb-20 sm:mb-20">
+          <div className="flex items-center gap-3 glass rounded-2xl px-6 py-3 mb-10 backdrop-blur-md border border-[color:var(--border)]">
+            <div className="w-8 h-8 bg-gradient-to-r from-[color:var(--accent-2)] to-[color:var(--accent-3)] rounded-lg flex items-center justify-center">
               <Filter size={16} className="text-white" />
             </div>
-            <span className="text-sm font-semibold text-gray-700">Explore by Category</span>
+            <span className="text-sm font-semibold text-muted">Explore by Category</span>
           </div>
           
-          <div className="flex flex-wrap justify-center gap-4">
+          <div className="flex flex-wrap justify-center gap-10">
             {filters.map((filter) => {
               const IconComponent = filter.icon;
               const isActive = activeFilter === filter.key;
@@ -360,22 +360,22 @@ const Projects = () => {
                   onClick={() => setActiveFilter(filter.key)}
                   className={`group relative flex items-center gap-3 px-6 py-3 rounded-xl font-semibold text-sm transition-all duration-300 hover:scale-105 ${
                     isActive
-                      ? 'glass text-white shadow-lg backdrop-blur-md border border-white/30'
-                      : 'glass text-gray-600 hover:text-gray-900 hover:shadow-md backdrop-blur-md border border-white/20'
+                      ? 'glass text-white shadow-lg backdrop-blur-md border border-[color:var(--border)]'
+                      : 'glass text-muted hover:text-theme hover:shadow-md backdrop-blur-md border border-[color:var(--border)]'
                   }`}
                 >
                   {isActive && (
                     <div className={`absolute inset-0 bg-gradient-to-r ${filter.color} rounded-xl opacity-90`}></div>
                   )}
                   <div className="relative z-10 flex items-center gap-3">
-                    <div className={`p-2 rounded-lg ${isActive ? 'bg-white/20' : 'bg-gray-100 group-hover:bg-gray-200'} transition-colors duration-300`}>
-                      <IconComponent size={16} className={isActive ? 'text-white' : 'text-gray-600'} />
+                    <div className={`p-2 rounded-lg ${isActive ? 'bg-white/20' : 'bg-[color:var(--bg-elev)] group-hover:bg-[color:var(--panel)]'} transition-colors duration-300`}>
+                      <IconComponent size={16} className={isActive ? 'text-white' : 'text-muted'} />
                     </div>
                     <span>{filter.label}</span>
                     <div className={`flex items-center justify-center w-6 h-6 rounded-full text-xs font-bold ${
                       isActive
                         ? 'bg-white/20 text-white'
-                        : 'bg-gray-200 text-gray-600 group-hover:bg-gray-300'
+                        : 'bg-[color:var(--panel)] text-muted group-hover:bg-[color:var(--bg-elev)]'
                     }`}>
                       {filter.count}
                     </div>
@@ -387,7 +387,7 @@ const Projects = () => {
         </div>
 
         {/* Projects Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 mb-20">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 lg:gap-10 mb-20">
           {filteredProjects.map((project) => {
             const hasShareableImage = Boolean(project.image) && !project.image.includes('/api/placeholder');
             const hasLiveUrl = Boolean(project.liveUrl);
@@ -397,10 +397,10 @@ const Projects = () => {
             return (
               <div 
                 key={project.id} 
-                className="group glass rounded-2xl overflow-hidden hover:shadow-xl transition-all duration-300 hover:scale-[1.02] hover:-translate-y-1 backdrop-blur-md border border-white/30"
+                className="group glass rounded-2xl overflow-hidden hover:shadow-xl transition-all duration-300 hover:scale-[1.02] hover:-translate-y-1 backdrop-blur-md border border-[color:var(--border)]"
               >
                 <div className="relative overflow-hidden">
-                  <div className="aspect-video bg-gradient-to-br from-blue-100 via-purple-100 to-pink-100 relative">
+                  <div className="aspect-video bg-[color:var(--panel)] relative">
                     {/* Website Screenshot */}
                     {hasShareableImage && (
                       <img 
@@ -420,24 +420,24 @@ const Projects = () => {
                     </div>
                     
                     {/* Simple floating elements */}
-                    <div className="absolute top-4 left-4 w-2 h-2 bg-blue-400 rounded-full opacity-60"></div>
-                    <div className="absolute bottom-4 right-4 w-2 h-2 bg-purple-400 rounded-full opacity-60"></div>
+                    <div className="absolute top-4 left-4 w-2 h-2 bg-[color:var(--accent)] rounded-full opacity-60"></div>
+                    <div className="absolute bottom-4 right-4 w-2 h-2 bg-[color:var(--accent-2)] rounded-full opacity-60"></div>
                   </div>
 
                   {/* Confidential Badge */}
                   {isPrivacyRedirect && (
-                    <div className="absolute top-4 left-4 glass rounded-full px-3 py-1 backdrop-blur-sm border border-white/30">
-                      <span className="text-xs font-semibold text-gray-700">Confidential</span>
+                    <div className="absolute top-4 left-4 glass rounded-full px-3 py-1 backdrop-blur-sm border border-[color:var(--border)]">
+                      <span className="text-xs font-semibold text-muted">Confidential</span>
                     </div>
                   )}
                   
                   {/* Hover Overlay */}
                   <div className="absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center justify-center">
-                    <div className="flex gap-4 transform scale-75 group-hover:scale-100 transition-transform duration-300">
+                    <div className="flex gap-10 transform scale-75 group-hover:scale-100 transition-transform duration-300">
                       {isPrivacyRedirect ? (
                         <Link
                           href="/projects/privacy"
-                          className="glass text-white p-3 rounded-xl hover:scale-110 transition-all duration-300 backdrop-blur-sm border border-white/30"
+                          className="glass text-white p-3 rounded-xl hover:scale-110 transition-all duration-300 backdrop-blur-sm border border-[color:var(--border)]"
                         >
                           <Eye size={18} />
                         </Link>
@@ -446,7 +446,7 @@ const Projects = () => {
                           href={projectHref}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="glass text-white p-3 rounded-xl hover:scale-110 transition-all duration-300 backdrop-blur-sm border border-white/30"
+                          className="glass text-white p-3 rounded-xl hover:scale-110 transition-all duration-300 backdrop-blur-sm border border-[color:var(--border)]"
                         >
                           <Eye size={18} />
                         </a>
@@ -455,18 +455,18 @@ const Projects = () => {
                   </div>
 
                   {/* Category Badge */}
-                  <div className="absolute top-4 right-4 glass rounded-full px-3 py-1 backdrop-blur-sm border border-white/30">
-                    <span className="text-xs font-semibold text-gray-700 capitalize">
+                  <div className="absolute top-4 right-4 glass rounded-full px-3 py-1 backdrop-blur-sm border border-[color:var(--border)]">
+                    <span className="text-xs font-semibold text-muted capitalize">
                       {project.category.replace('-', ' ')}
                     </span>
                   </div>
                 </div>
                 
                 <div className="p-6">
-                  <h4 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-blue-600 group-hover:to-purple-600 transition-all duration-300 line-clamp-2">
+                  <h4 className="text-xl font-bold text-theme mb-3 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-[color:var(--accent)] group-hover:to-[color:var(--accent-2)] transition-all duration-300 line-clamp-2">
                     {project.title}
                   </h4>
-                  <p className="text-gray-600 text-sm mb-4 leading-relaxed line-clamp-3">
+                  <p className="text-muted text-sm mb-4 leading-relaxed line-clamp-3">
                     {project.description}
                   </p>
                   
@@ -475,32 +475,32 @@ const Projects = () => {
                     {project.technologies.slice(0, 3).map((tech) => (
                       <span
                         key={tech}
-                        className="glass rounded-lg px-3 py-1 text-xs font-medium text-gray-700 hover:text-blue-600 transition-colors duration-300 backdrop-blur-sm border border-white/20"
+                        className="glass rounded-lg px-3 py-1 text-xs font-medium text-muted hover:text-theme transition-colors duration-300 backdrop-blur-sm border border-[color:var(--border)]"
                       >
                         {tech}
                       </span>
                     ))}
                     {project.technologies.length > 3 && (
-                      <span className="glass rounded-lg px-3 py-1 text-xs font-medium text-blue-600 backdrop-blur-sm border border-white/20">
+                      <span className="glass rounded-lg px-3 py-1 text-xs font-medium text-[color:var(--accent)] backdrop-blur-sm border border-[color:var(--border)]">
                         +{project.technologies.length - 3}
                       </span>
                     )}
                   </div>
 
                   {/* Action Area */}
-                  <div className="flex items-center justify-between pt-4 border-t border-gray-200/50">
+                  <div className="flex items-center justify-between pt-4 border-t border-[color:var(--border)]">
                     <div className="flex items-center gap-2">
-                      <div className={`w-2 h-2 rounded-full ${isPrivacyRedirect ? 'bg-amber-500' : 'bg-green-500'}`}></div>
-                      <span className="text-xs text-gray-500 font-medium">
+                      <div className={`w-2 h-2 rounded-full ${isPrivacyRedirect ? 'bg-[color:var(--accent-2)]' : 'bg-[color:var(--accent-3)]'}`}></div>
+                      <span className="text-xs text-muted font-medium">
                         {isPrivacyRedirect ? 'Privacy Protected' : 'Live Project'}
                       </span>
                     </div>
                     
-                    <div className="flex gap-4">
+                    <div className="flex gap-10">
                       {isPrivacyRedirect ? (
                         <Link
                           href="/projects/privacy"
-                          className="text-blue-600 hover:text-blue-700 text-sm font-semibold flex items-center gap-1 hover:scale-105 transition-all duration-300"
+                          className="text-[color:var(--accent)] hover:text-[color:var(--accent-2)] text-sm font-semibold flex items-center gap-1 hover:scale-105 transition-all duration-300"
                         >
                           <span>View Notice</span>
                           <ExternalLink size={14} />
@@ -510,7 +510,7 @@ const Projects = () => {
                           href={projectHref ?? '#'}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="text-blue-600 hover:text-blue-700 text-sm font-semibold flex items-center gap-1 hover:scale-105 transition-all duration-300"
+                          className="text-[color:var(--accent)] hover:text-[color:var(--accent-2)] text-sm font-semibold flex items-center gap-1 hover:scale-105 transition-all duration-300"
                         >
                           <span>Visit Site</span>
                           <ExternalLink size={14} />
@@ -526,42 +526,42 @@ const Projects = () => {
 
         {/* CTA Section */}
         <div className="text-center">
-          <div className="glass rounded-2xl p-8 lg:p-12 relative overflow-hidden backdrop-blur-md border border-white/30">
+          <div className="glass rounded-2xl p-8 lg:p-12 relative overflow-hidden backdrop-blur-md border border-[color:var(--border)]">
             {/* Background Elements */}
-            <div className="absolute inset-0 bg-gradient-to-r from-blue-600/3 via-purple-600/3 to-pink-600/3"></div>
-            <div className="absolute top-0 left-1/4 w-32 h-32 bg-gradient-to-r from-blue-400/15 to-purple-400/15 rounded-full blur-3xl"></div>
-            <div className="absolute bottom-0 right-1/4 w-40 h-40 bg-gradient-to-r from-pink-400/15 to-orange-400/15 rounded-full blur-3xl"></div>
+            <div className="absolute inset-0 bg-gradient-to-r from-[color:var(--accent)]/6 via-[color:var(--accent-2)]/6 to-[color:var(--accent-3)]/6"></div>
+            <div className="absolute top-0 left-1/4 w-32 h-32 bg-gradient-to-r from-[color:var(--accent)]/15 to-[color:var(--accent-2)]/15 rounded-full blur-3xl"></div>
+            <div className="absolute bottom-0 right-1/4 w-40 h-40 bg-gradient-to-r from-[color:var(--accent-2)]/15 to-[color:var(--accent-3)]/15 rounded-full blur-3xl"></div>
             
             <div className="relative z-10">
-              <div className="inline-flex items-center gap-3 glass rounded-full px-6 py-3 mb-8 backdrop-blur-sm border border-white/30">
-                <div className="w-8 h-8 bg-gradient-to-r from-yellow-500 to-orange-600 rounded-full flex items-center justify-center">
+              <div className="inline-flex items-center gap-3 glass rounded-full px-6 py-3 mb-10 backdrop-blur-sm border border-[color:var(--border)]">
+                <div className="w-8 h-8 bg-gradient-to-r from-[color:var(--accent-2)] to-[color:var(--accent-3)] rounded-full flex items-center justify-center">
                   <Zap size={16} className="text-white" />
                 </div>
-                <span className="text-sm font-semibold text-gray-700">Ready to Start?</span>
+                <span className="text-sm font-semibold text-muted">Ready to Start?</span>
               </div>
               
-              <h3 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">
-                Let's Build Something <span className="gradient-text bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">Amazing</span> Together
+              <h3 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-theme mb-6 leading-tight">
+                Let's Build Something <span className="gradient-text bg-gradient-to-r from-[color:var(--accent)] via-[color:var(--accent-2)] to-[color:var(--accent-3)] bg-clip-text text-transparent">Amazing</span> Together
               </h3>
               
-              <p className="text-base sm:text-lg text-gray-600 mb-10 max-w-2xl mx-auto leading-relaxed">
+              <p className="text-base sm:text-lg text-muted mb-10 max-w-2xl mx-auto leading-relaxed">
                 Ready to bring your vision to life? I'd love to discuss your project and explore 
                 how we can create exceptional digital experiences that drive real results.
               </p>
               
-              <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+              <div className="flex flex-col sm:flex-row gap-10 justify-center mb-16">
                 <Link
                   href="/contact"
-                  className="group relative bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-xl flex items-center justify-center gap-3 overflow-hidden px-8 py-4 font-semibold text-base shadow-lg hover:shadow-blue-500/30 transition-all duration-300 hover:scale-105 hover:-translate-y-1"
+                  className="group relative btn-primary text-white rounded-xl flex items-center justify-center gap-3 overflow-hidden px-8 py-4 font-semibold text-base shadow-lg transition-all duration-300 hover:scale-105 hover:-translate-y-1"
                 >
                   <span className="relative z-10">Start Your Project</span>
                   <Rocket size={18} className="relative z-10 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300" />
-                  <div className="absolute inset-0 bg-gradient-to-r from-blue-700 to-purple-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div className="absolute inset-0 bg-gradient-to-r from-[color:var(--accent-2)] to-[color:var(--accent-3)] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </Link>
                 
                 <Link
                   href="/services"
-                  className="group glass rounded-xl px-8 py-4 font-semibold text-base text-gray-700 hover:text-blue-600 transition-colors duration-300 flex items-center justify-center gap-3 backdrop-blur-sm border border-white/30"
+                  className="group glass rounded-xl px-8 py-4 font-semibold text-base text-muted hover:text-theme transition-colors duration-300 flex items-center justify-center gap-3 backdrop-blur-sm border border-[color:var(--border)]"
                 >
                   <span>View Services</span>
                   <ExternalLink size={18} className="group-hover:rotate-45 transition-transform duration-300" />
@@ -569,7 +569,7 @@ const Projects = () => {
               </div>
 
               {/* Stats */}
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 pt-8 border-t border-gray-200/50">
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-10 pt-8 border-t border-[color:var(--border)]">
                 {[
                   { number: '50+', label: 'Projects Delivered', icon: '🚀' },
                   { number: '100+', label: 'Happy Clients', icon: '😊' },
@@ -577,10 +577,10 @@ const Projects = () => {
                 ].map((stat) => (
                   <div key={stat.label} className="text-center group cursor-pointer hover:scale-105 transition-transform duration-300">
                     <div className="text-2xl mb-2 group-hover:animate-bounce">{stat.icon}</div>
-                    <div className="text-2xl sm:text-3xl font-bold gradient-text bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent mb-2">
+                    <div className="text-2xl sm:text-3xl font-bold gradient-text bg-gradient-to-r from-[color:var(--accent)] via-[color:var(--accent-2)] to-[color:var(--accent-3)] bg-clip-text text-transparent mb-2">
                       {stat.number}
                     </div>
-                    <div className="text-sm text-gray-600 font-medium">{stat.label}</div>
+                    <div className="text-sm text-muted font-medium">{stat.label}</div>
                   </div>
                 ))}
               </div>

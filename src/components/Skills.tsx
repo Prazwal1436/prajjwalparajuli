@@ -12,8 +12,8 @@ const Skills = () => {
     development: {
       title: 'Development',
       icon: Code,
-      color: 'blue',
-      gradient: 'from-blue-500 via-blue-600 to-purple-600',
+      color: 'accent',
+      gradient: 'from-[color:var(--accent)] via-[color:var(--accent-2)] to-[color:var(--accent-3)]',
       emoji: '💻',
       skills: [
         { name: 'React/Next.js', level: 95, description: 'Building modern, scalable web applications', icon: '⚛️' },
@@ -27,8 +27,8 @@ const Skills = () => {
     design: {
       title: 'Design',
       icon: Palette,
-      color: 'purple',
-      gradient: 'from-purple-500 via-pink-500 to-red-500',
+      color: 'accent',
+      gradient: 'from-[color:var(--accent-2)] via-[color:var(--accent)] to-[color:var(--accent-3)]',
       emoji: '🎨',
       skills: [
         { name: 'UI/UX Design', level: 90, description: 'User-centered design principles', icon: '✨' },
@@ -42,8 +42,8 @@ const Skills = () => {
     marketing: {
       title: 'Digital Marketing',
       icon: BarChart3,
-      color: 'green',
-      gradient: 'from-green-500 via-emerald-500 to-teal-500',
+      color: 'accent',
+      gradient: 'from-[color:var(--accent-3)] via-[color:var(--accent)] to-[color:var(--accent-2)]',
       emoji: '📈',
       skills: [
         { name: 'SEO', level: 90, description: 'Search engine optimization', icon: '🔍' },
@@ -57,8 +57,8 @@ const Skills = () => {
     tools: {
       title: 'Tools & Technologies',
       icon: Zap,
-      color: 'amber',
-      gradient: 'from-yellow-500 via-orange-500 to-red-500',
+      color: 'accent',
+      gradient: 'from-[color:var(--accent)] via-[color:var(--accent-3)] to-[color:var(--accent-2)]',
       emoji: '⚡',
       skills: [
         { name: 'Git/GitHub', level: 95, description: 'Version control and collaboration', icon: '🔧' },
@@ -96,30 +96,30 @@ const Skills = () => {
   const IconComponent = currentCategory.icon;
 
   return (
-    <section ref={sectionRef} id="skills" className="py-20 lg:py-32 bg-gradient-to-br from-white via-blue-50/30 to-purple-50/20 relative overflow-hidden">
+    <section ref={sectionRef} id="skills" className="py-24 lg:py-40 relative overflow-hidden grid-surface">
       {/* Background Elements */}
       <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
-      <div className="absolute top-1/4 left-10 w-72 h-72 bg-gradient-to-r from-blue-400/20 to-purple-400/20 rounded-full blur-3xl"></div>
-      <div className="absolute bottom-1/4 right-10 w-72 h-72 bg-gradient-to-r from-pink-400/20 to-orange-400/20 rounded-full blur-3xl"></div>
+      <div className="absolute top-1/4 left-10 w-72 h-72 bg-gradient-to-r from-[color:var(--accent)]/20 to-[color:var(--accent-2)]/20 rounded-full blur-3xl"></div>
+      <div className="absolute bottom-1/4 right-10 w-72 h-72 bg-gradient-to-r from-[color:var(--accent-2)]/20 to-[color:var(--accent-3)]/20 rounded-full blur-3xl"></div>
 
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         {/* Enhanced Header */}
-        <div className="text-center mb-16 animate-fade-in flex flex-col items-center justify-center">
+        <div className="text-center mb-20 animate-fade-in flex flex-col items-center justify-center">
           <div className="inline-flex items-center space-x-2 glass rounded-full px-6 py-3 mb-6">
-            <Sparkles size={20} className="text-purple-500" />
-            <span className="text-sm font-medium text-gray-700">Technical Expertise</span>
+            <Sparkles size={20} className="text-[color:var(--accent-2)]" />
+            <span className="text-sm font-medium text-muted">Technical Expertise</span>
           </div>
-          <h2 className="text-fluid-4xl font-bold text-gray-900 mb-6">
+          <h2 className="text-fluid-4xl font-bold text-theme mb-6">
             Skills & <span className="gradient-text">Expertise</span>
           </h2>
-          <p className="text-fluid-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-fluid-lg text-muted max-w-3xl mx-auto leading-relaxed">
             A comprehensive showcase of my technical capabilities and professional expertise 
             across full-stack development, design, and digital marketing.
           </p>
         </div>
 
         {/* Enhanced Category Tabs */}
-        <div className="flex flex-wrap justify-center items-center gap-3 mb-16 w-full">
+        <div className="flex flex-wrap justify-center items-center gap-3 mb-20 w-full">
           {Object.entries(skillCategories).map(([key, category]) => {
             const isActive = activeCategory === key;
             const IconComp = category.icon;
@@ -131,15 +131,15 @@ const Skills = () => {
                 className={`group relative flex items-center space-x-3 px-6 py-4 rounded-2xl font-medium transition-all duration-300 transform hover:scale-105 ${
                   isActive
                     ? 'glass text-white shadow-2xl'
-                    : 'glass text-gray-600 hover:text-gray-900 hover:shadow-lg'
+                    : 'glass text-muted hover:text-theme hover:shadow-lg'
                 }`}
               >
                 {isActive && (
                   <div className={`absolute inset-0 bg-gradient-to-r ${category.gradient} rounded-2xl blur-sm opacity-80`}></div>
                 )}
                 <div className="relative z-10 flex items-center space-x-3">
-                  <div className={`p-2 rounded-xl ${isActive ? 'bg-white/20' : 'bg-gray-100 group-hover:bg-gray-200'} transition-colors duration-300`}>
-                    <IconComp size={20} className={isActive ? 'text-white' : 'text-gray-600'} />
+                  <div className={`p-2 rounded-xl ${isActive ? 'bg-white/20' : 'bg-[color:var(--bg-elev)] group-hover:bg-[color:var(--panel)]'} transition-colors duration-300`}>
+                    <IconComp size={20} className={isActive ? 'text-white' : 'text-muted'} />
                   </div>
                   <span>{category.title}</span>
                   <span className="text-lg">{category.emoji}</span>
@@ -150,8 +150,8 @@ const Skills = () => {
         </div>
 
         {/* Enhanced Skills Grid */}
-        <div className="w-full max-w-6xl mx-auto mb-16">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 w-full">
+        <div className="w-full max-w-6xl mx-auto mb-20">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 w-full">
           {currentCategory.skills.map((skill, index) => (
             <div
               key={skill.name}
@@ -165,10 +165,10 @@ const Skills = () => {
                     <span className="text-xl">{skill.icon}</span>
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-blue-600 group-hover:to-purple-600">
+                    <h3 className="text-xl font-bold text-theme mb-2 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-[color:var(--accent)] group-hover:to-[color:var(--accent-2)]">
                       {skill.name}
                     </h3>
-                    <p className="text-gray-600 leading-relaxed">
+                    <p className="text-muted leading-relaxed">
                       {skill.description}
                     </p>
                   </div>
@@ -183,7 +183,7 @@ const Skills = () => {
                         key={i}
                         size={14}
                         className={`${
-                          i < Math.floor(skill.level / 20) ? 'text-yellow-400 fill-current' : 'text-gray-300'
+                          i < Math.floor(skill.level / 20) ? 'text-[color:var(--accent-3)] fill-current' : 'text-[color:var(--border)]'
                         }`}
                       />
                     ))}
@@ -193,7 +193,7 @@ const Skills = () => {
               
               {/* Enhanced Progress Bar */}
               <div className="relative">
-                <div className="w-full bg-gray-200 rounded-full h-3 overflow-hidden">
+                <div className="w-full bg-[color:var(--border)] rounded-full h-3 overflow-hidden">
                   <div
                     className={`h-3 rounded-full bg-gradient-to-r ${currentCategory.gradient} transition-all duration-1500 ease-out transform ${
                       isVisible[`${activeCategory}-${index}`] ? 'scale-x-100' : 'scale-x-0'
@@ -223,20 +223,20 @@ const Skills = () => {
         <div className="mt-24 lg:mt-32 animate-fade-in w-full" style={{ animationDelay: '600ms' }}>
           <div className="text-center mb-20 flex flex-col items-center justify-center">
             <div className="inline-flex items-center space-x-2 glass rounded-full px-6 py-3 mb-6 shadow-lg">
-              <Award size={20} className="text-blue-600" />
-              <span className="text-sm font-semibold text-gray-800 tracking-wide">CAREER JOURNEY</span>
+              <Award size={20} className="text-[color:var(--accent)]" />
+              <span className="text-sm font-semibold text-muted tracking-wide">CAREER JOURNEY</span>
             </div>
-            <h3 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+            <h3 className="text-4xl lg:text-5xl font-bold text-theme mb-6">
               Professional <span className="gradient-text">Timeline</span>
             </h3>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
+            <p className="text-lg text-muted max-w-2xl mx-auto leading-relaxed">
               From junior developer to trusted professional serving 150+ global clients with proven expertise in modern web technologies.
             </p>
           </div>
           
           <div className="relative max-w-6xl mx-auto w-full">
             {/* Modern Timeline Line - Only visible on desktop, centered */}
-            <div className="hidden lg:block absolute left-1/2 transform -translate-x-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-blue-500 via-purple-500 to-pink-500 opacity-30"></div>
+            <div className="hidden lg:block absolute left-1/2 transform -translate-x-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-[color:var(--accent)] via-[color:var(--accent-2)] to-[color:var(--accent-3)] opacity-30"></div>
             
             <div className="space-y-12 lg:space-y-20">
               {[
@@ -254,9 +254,9 @@ const Skills = () => {
                     { icon: '⭐', text: '4.9/5 average client rating', metric: '4.9/5' }
                   ],
                   side: 'left',
-                  gradient: 'from-blue-600 via-blue-500 to-purple-600',
+                  gradient: 'from-[color:var(--accent)] via-[color:var(--accent-2)] to-[color:var(--accent-3)]',
                   icon: '🚀',
-                  iconBg: 'bg-gradient-to-br from-blue-500 to-purple-600'
+                  iconBg: 'bg-gradient-to-br from-[color:var(--accent)] to-[color:var(--accent-2)]'
                 },
                 {
                   year: '2022 - 2023',
@@ -272,9 +272,9 @@ const Skills = () => {
                     { icon: '🔧', text: 'Optimized performance by 60%', metric: '60%' }
                   ],
                   side: 'right',
-                  gradient: 'from-purple-600 via-purple-500 to-pink-600',
+                  gradient: 'from-[color:var(--accent-2)] via-[color:var(--accent)] to-[color:var(--accent-3)]',
                   icon: '💼',
-                  iconBg: 'bg-gradient-to-br from-purple-500 to-pink-600'
+                  iconBg: 'bg-gradient-to-br from-[color:var(--accent-2)] to-[color:var(--accent-3)]'
                 },
                 {
                   year: '2021 - 2022',
@@ -290,9 +290,9 @@ const Skills = () => {
                     { icon: '🏆', text: 'Best newcomer award', metric: 'Award' }
                   ],
                   side: 'left',
-                  gradient: 'from-pink-600 via-pink-500 to-red-500',
+                  gradient: 'from-[color:var(--accent-3)] via-[color:var(--accent)] to-[color:var(--accent-2)]',
                   icon: '🎯',
-                  iconBg: 'bg-gradient-to-br from-pink-500 to-red-500'
+                  iconBg: 'bg-gradient-to-br from-[color:var(--accent-3)] to-[color:var(--accent)]'
                 }
               ].map((item, index) => (
                 <div key={index} className="relative flex flex-col lg:flex-row items-start lg:items-center">
@@ -310,7 +310,7 @@ const Skills = () => {
                   }`}>
                     <div className="group relative">
                       {/* Premium Card */}
-                      <div className="relative glass rounded-3xl p-8 lg:p-10 shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-gray-200/50">
+                      <div className="relative glass rounded-3xl p-8 lg:p-10 shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-[color:var(--border)]">
                         {/* Gradient Background on Hover */}
                         <div className={`absolute inset-0 bg-gradient-to-br ${item.gradient} opacity-0 group-hover:opacity-5 transition-opacity duration-500 rounded-3xl`}></div>
                         
@@ -322,12 +322,12 @@ const Skills = () => {
                               <span className="text-xs text-white/80">•</span>
                               <span className="text-xs font-semibold text-white/90">{item.duration}</span>
                             </div>
-                            <div className="hidden lg:block text-xs font-medium text-gray-500 bg-gray-100 px-3 py-1 rounded-full">
+                            <div className="hidden lg:block text-xs font-medium text-muted bg-[color:var(--panel)] px-3 py-1 rounded-full border border-[color:var(--border)]">
                               {item.location}
                             </div>
                           </div>
                           
-                          <h4 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-2 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-blue-600 group-hover:to-purple-600 transition-all duration-300">
+                          <h4 className="text-2xl lg:text-3xl font-bold text-theme mb-2 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-[color:var(--accent)] group-hover:to-[color:var(--accent-2)] transition-all duration-300">
                             {item.title}
                           </h4>
                           
@@ -338,18 +338,18 @@ const Skills = () => {
                             </p>
                           </div>
                           
-                          <p className="text-gray-600 leading-relaxed text-sm lg:text-base">
+                          <p className="text-muted leading-relaxed text-sm lg:text-base">
                             {item.description}
                           </p>
                         </div>
 
                         {/* Achievements Grid */}
-                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 relative z-10">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-10 relative z-10">
                           {item.achievements.map((achievement, i) => (
-                            <div key={i} className="flex items-start space-x-3 p-3 rounded-xl bg-gradient-to-br from-gray-50 to-white border border-gray-100 hover:border-gray-200 transition-all duration-300">
+                            <div key={i} className="flex items-start space-x-3 p-3 rounded-xl bg-[color:var(--bg-elev)] border border-[color:var(--border)] hover:border-[color:var(--accent)]/40 transition-all duration-300">
                               <span className="text-xl flex-shrink-0 mt-0.5">{achievement.icon}</span>
                               <div className="flex-1 min-w-0">
-                                <p className="text-sm font-medium text-gray-700 leading-snug">{achievement.text}</p>
+                                <p className="text-sm font-medium text-muted leading-snug">{achievement.text}</p>
                                 <p className={`text-xs font-bold bg-gradient-to-r ${item.gradient} bg-clip-text text-transparent mt-1`}>
                                   {achievement.metric}
                                 </p>
@@ -366,7 +366,7 @@ const Skills = () => {
                       <div className={`hidden lg:block absolute top-8 ${
                         item.side === 'right' ? 'right-full mr-8' : 'left-full ml-8'
                       } w-8 h-0.5 bg-gradient-to-r ${
-                        item.side === 'right' ? 'from-gray-300 to-transparent' : 'from-transparent to-gray-300'
+                        item.side === 'right' ? 'from-[color:var(--border)] to-transparent' : 'from-transparent to-[color:var(--border)]'
                       }`}></div>
                     </div>
                   </div>
@@ -375,27 +375,27 @@ const Skills = () => {
             </div>
 
             {/* Bottom Stats Summary */}
-            <div className="mt-20 glass rounded-3xl p-8 lg:p-12 shadow-xl border border-gray-200/50">
-              <div className="text-center mb-8">
-                <h4 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-2">
+            <div className="mt-20 glass rounded-3xl p-8 lg:p-12 shadow-xl border border-[color:var(--border)]">
+              <div className="text-center mb-10">
+                <h4 className="text-2xl lg:text-3xl font-bold text-theme mb-2">
                   Journey <span className="gradient-text">Highlights</span>
                 </h4>
-                <p className="text-gray-600">Key metrics from my professional career</p>
+                <p className="text-muted">Key metrics from my professional career</p>
               </div>
               
-              <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+              <div className="grid grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-10">
                 {[
-                  { icon: '📅', label: 'Years Active', value: '5+', color: 'from-blue-500 to-blue-600' },
-                  { icon: '🌍', label: 'Countries Served', value: '15+', color: 'from-purple-500 to-purple-600' },
-                  { icon: '💎', label: 'Projects Delivered', value: '200+', color: 'from-pink-500 to-pink-600' },
-                  { icon: '⭐', label: 'Client Rating', value: '4.9/5', color: 'from-amber-500 to-amber-600' }
+                  { icon: '📅', label: 'Years Active', value: '5+' },
+                  { icon: '🌍', label: 'Countries Served', value: '15+' },
+                  { icon: '💎', label: 'Projects Delivered', value: '200+' },
+                  { icon: '⭐', label: 'Client Rating', value: '4.9/5' }
                 ].map((stat, i) => (
-                  <div key={i} className="text-center p-6 rounded-2xl bg-gradient-to-br from-gray-50 to-white border border-gray-100 hover:border-gray-200 hover:shadow-lg transition-all duration-300">
+                  <div key={i} className="text-center p-6 rounded-2xl bg-[color:var(--bg-elev)] border border-[color:var(--border)] hover:border-[color:var(--accent)]/40 hover:shadow-lg transition-all duration-300">
                     <div className="text-4xl mb-3">{stat.icon}</div>
-                    <div className={`text-3xl lg:text-4xl font-bold mb-2 bg-gradient-to-r ${stat.color} bg-clip-text text-transparent`}>
+                    <div className={`text-3xl lg:text-4xl font-bold mb-2 bg-gradient-to-r ${currentCategory.gradient} bg-clip-text text-transparent`}>
                       {stat.value}
                     </div>
-                    <div className="text-sm font-medium text-gray-600">{stat.label}</div>
+                    <div className="text-sm font-medium text-muted">{stat.label}</div>
                   </div>
                 ))}
               </div>

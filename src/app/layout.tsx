@@ -1,16 +1,16 @@
 import type { Metadata, Viewport } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Space_Grotesk, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const spaceGrotesk = Space_Grotesk({
+  variable: "--font-space-grotesk",
   subsets: ["latin"],
   display: "swap",
   preload: true,
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const jetBrainsMono = JetBrains_Mono({
+  variable: "--font-jetbrains-mono",
   subsets: ["latin"],
   display: "swap",
 });
@@ -23,8 +23,8 @@ export const viewport: Viewport = {
   maximumScale: 1,
   userScalable: false,
   themeColor: [
-    { media: '(prefers-color-scheme: light)', color: '#3b82f6' },
-    { media: '(prefers-color-scheme: dark)', color: '#1e40af' },
+    { media: '(prefers-color-scheme: light)', color: '#2b7cff' },
+    { media: '(prefers-color-scheme: dark)', color: '#42d0ff' },
   ],
 }
 
@@ -112,7 +112,7 @@ export const metadata: Metadata = {
       {
         rel: 'mask-icon',
         url: '/safari-pinned-tab.svg',
-        color: '#3b82f6',
+        color: '#2b7cff',
       },
     ],
   },
@@ -178,8 +178,8 @@ export default function RootLayout({
         <link rel="dns-prefetch" href="//fonts.googleapis.com" />
         
         {/* Additional meta tags for better SEO */}
-        <meta name="theme-color" content="#3b82f6" />
-        <meta name="msapplication-TileColor" content="#3b82f6" />
+        <meta name="theme-color" content="#2b7cff" />
+        <meta name="msapplication-TileColor" content="#2b7cff" />
         <meta name="msapplication-config" content="/browserconfig.xml" />
         
         {/* Security headers */}
@@ -201,7 +201,7 @@ export default function RootLayout({
         <link rel="alternate" type="application/rss+xml" title="Prajjwal Parajuli Blog" href="/rss.xml" />
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${spaceGrotesk.variable} ${jetBrainsMono.variable} antialiased`}
         suppressHydrationWarning={true}
       >
         {/* Skip to main content for accessibility */}
