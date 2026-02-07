@@ -1,7 +1,6 @@
 'use client';
 
 import { Shield, Award, Users, Clock, Star, CheckCircle, Globe, MessageCircle } from 'lucide-react';
-import Image from 'next/image';
 
 export default function TrustSignals() {
   const stats = [

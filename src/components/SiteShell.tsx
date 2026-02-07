@@ -1,5 +1,6 @@
 'use client';
 
+import { useState } from 'react';
 import Link from 'next/link';
 import { Facebook, Linkedin, X, Github, Instagram, Globe, Mail } from 'lucide-react';
 
@@ -13,16 +14,55 @@ const socialLinks = [
 ];
 
 export default function SiteShell({ children }: { children: React.ReactNode }) {
+  const [footerData, setFooterData] = useState({ name: '', email: '', message: '' });
+  const [footerStatus, setFooterStatus] = useState<'idle' | 'sending' | 'sent' | 'error'>('idle');
+
+  const handleFooterChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFooterData({ ...footerData, [e.target.name]: e.target.value });
+  };
+
+  const handleFooterSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!footerData.name || !footerData.email || !footerData.message) {
+      setFooterStatus('error');
+      return;
+    }
+
+    try {
+      setFooterStatus('sending');
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: footerData.name,
+          email: footerData.email,
+          subject: 'Footer contact form',
+          message: footerData.message,
+          source: 'footer-form',
+        }),
+      });
+
+      if (!response.ok) throw new Error('Failed to send');
+
+      setFooterStatus('sent');
+      setFooterData({ name: '', email: '', message: '' });
+      setTimeout(() => setFooterStatus('idle'), 4000);
+    } catch (error) {
+      console.error('Footer form error:', error);
+      setFooterStatus('error');
+    }
+  };
+
   return (
     <div className="site-shell">
       <header className="site-header">
         <div className="container header-row">
-          <div className="brand">
+          <Link href="/" className="brand" aria-label="Go to homepage">
             <div className="brand-text">
               <div className="brand-name">Prajjwal Parajuli</div>
               <div className="brand-role">Software Developer</div>
             </div>
-          </div>
+          </Link>
           <nav className="nav">
             <Link href="/">Home</Link>
             <Link href="/about">About</Link>
@@ -66,11 +106,33 @@ export default function SiteShell({ children }: { children: React.ReactNode }) {
           <div className="footer-form">
             <h3>Start a Project</h3>
             <p>Send a quick message and I’ll respond within 24 hours.</p>
-            <form className="footer-contact-form">
-              <input type="text" placeholder="Your Name" />
-              <input type="email" placeholder="Your Email" />
-              <textarea placeholder="Project Details" rows={4} />
-              <button type="button" className="btn primary">Send Message</button>
+            <form className="footer-contact-form" onSubmit={handleFooterSubmit}>
+              <input
+                type="text"
+                name="name"
+                placeholder="Your Name"
+                value={footerData.name}
+                onChange={handleFooterChange}
+              />
+              <input
+                type="email"
+                name="email"
+                placeholder="Your Email"
+                value={footerData.email}
+                onChange={handleFooterChange}
+              />
+              <textarea
+                name="message"
+                placeholder="Project Details"
+                rows={4}
+                value={footerData.message}
+                onChange={handleFooterChange}
+              />
+              <button type="submit" className="btn primary" disabled={footerStatus === 'sending'}>
+                {footerStatus === 'sending' ? 'Sending...' : 'Send Message'}
+              </button>
+              {footerStatus === 'sent' && <p className="form-success">Thanks! I’ll reply soon.</p>}
+              {footerStatus === 'error' && <p className="form-error">Please complete all fields and try again.</p>}
             </form>
           </div>
 

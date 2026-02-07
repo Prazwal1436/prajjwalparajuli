@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useRef, useEffect } from 'react';
-import { Code, Palette, BarChart3, Zap, Star, Award, TrendingUp, Layers, Sparkles } from 'lucide-react';
+import { Code, Palette, BarChart3, Zap, Star, Award, Sparkles } from 'lucide-react';
 
 const Skills = () => {
   const [activeCategory, setActiveCategory] = useState('development');
@@ -93,7 +93,6 @@ const Skills = () => {
   }, [activeCategory]);
 
   const currentCategory = skillCategories[activeCategory as keyof typeof skillCategories];
-  const IconComponent = currentCategory.icon;
 
   return (
     <section ref={sectionRef} id="skills" className="py-24 lg:py-40 relative overflow-hidden grid-surface">

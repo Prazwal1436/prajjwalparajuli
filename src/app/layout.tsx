@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from "next";
+import Script from "next/script";
 import { Space_Grotesk, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 
@@ -69,11 +70,11 @@ export const metadata: Metadata = {
     siteName: "Prajjwal Parajuli Portfolio",
     images: [
       {
-        url: "/og-image.jpg",
+        url: "/prajjwal.png",
         width: 1200,
         height: 630,
         alt: "Prajjwal Parajuli - Portfolio",
-        type: "image/jpeg",
+        type: "image/png",
       }
     ],
     locale: "en_US",
@@ -83,7 +84,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Prajjwal Parajuli - Full Stack Developer & Digital Marketing Expert",
     description: "Creating digital solutions that drive business growth",
-    images: ["/twitter-card.jpg"],
+    images: ["/prajjwal.png"],
     creator: "@prajjwalparajuli",
     site: "@prajjwalparajuli",
   },
@@ -212,11 +213,13 @@ export default function RootLayout({
         {children}
         
         {/* Google Analytics (replace with your tracking ID) */}
-        <script
-          async
+        <Script
           src="https://www.googletagmanager.com/gtag/js?id=GA_TRACKING_ID"
+          strategy="afterInteractive"
         />
-        <script
+        <Script
+          id="google-analytics"
+          strategy="afterInteractive"
           dangerouslySetInnerHTML={{
             __html: `
               window.dataLayer = window.dataLayer || [];
@@ -231,7 +234,9 @@ export default function RootLayout({
         />
         
         {/* Microsoft Clarity (replace with your project ID) */}
-        <script
+        <Script
+          id="microsoft-clarity"
+          strategy="afterInteractive"
           dangerouslySetInnerHTML={{
             __html: `
               (function(c,l,a,r,i,t,y){

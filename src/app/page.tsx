@@ -36,13 +36,13 @@ export const metadata: Metadata = {
     title: 'Prajjwal Parajuli | Software Developer & Digital Marketing Expert',
     description: 'Mobile apps, web apps, websites, AI chatbots, and social media packages with strategic planning.',
     siteName: 'Prajjwal Parajuli Portfolio',
-    images: [{ url: '/og-image.jpg', width: 1200, height: 630, alt: 'Prajjwal Parajuli' }],
+    images: [{ url: '/prajjwal.png', width: 1200, height: 630, alt: 'Prajjwal Parajuli' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Prajjwal Parajuli | Software Developer',
     description: 'Mobile apps, web apps, websites, AI chatbots, and social media packages with strategic planning.',
-    images: ['/twitter-card.jpg'],
+    images: ['/prajjwal.png'],
     creator: '@prajjwalparajuli',
   },
   alternates: {
@@ -71,7 +71,7 @@ const organizationData = {
   '@type': 'Organization',
   name: 'Prajjwal Parajuli',
   url: SITE_URL,
-  logo: `${SITE_URL}/logo.png`,
+  logo: `${SITE_URL}/prajjwal.png`,
   description: 'Software development, AI solutions, and digital marketing services.',
 };
 
@@ -175,8 +175,10 @@ export default function Home() {
                 <Image
                   src="/prajjwal.png"
                   alt="Prajjwal Parajuli"
-                  width={360}
-                  height={360}
+                  width={420}
+                  height={420}
+                  sizes="(max-width: 640px) 70vw, (max-width: 1024px) 360px, 420px"
+                  quality={95}
                   className="hero-portrait-img"
                   priority
                 />

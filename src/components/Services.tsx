@@ -1,12 +1,11 @@
 "use client";
 
-import { useState, useRef, useEffect } from 'react';
+import { useState, useRef } from 'react';
 import { Code, Palette, BarChart3, Zap, CheckCircle, ArrowRight, Star, Sparkles, Target, Users, Clock, Trophy, Rocket, Globe } from 'lucide-react';
 import Link from 'next/link';
 
 const Services = () => {
   const [hoveredService, setHoveredService] = useState<number | null>(null);
-  const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef<HTMLDivElement>(null);
 
   const services = [
@@ -120,23 +119,6 @@ const Services = () => {
       icon: '📈'
     }
   ];
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-        }
-      },
-      { threshold: 0.1 }
-    );
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
-    return () => observer.disconnect();
-  }, []);
 
   return (
     <section ref={sectionRef} id="services" className="relative py-24 lg:py-40 overflow-hidden grid-surface">
@@ -461,7 +443,7 @@ const Services = () => {
                   { icon: Trophy, number: '50+', label: 'Projects Done', color: 'from-[color:var(--accent-3)] to-[color:var(--accent-2)]' },
                   { icon: Star, number: '5.0', label: 'Average Rating', color: 'from-[color:var(--accent-2)] to-[color:var(--accent)]' },
                   { icon: Clock, number: '24/7', label: 'Support', color: 'from-[color:var(--accent)] to-[color:var(--accent-2)]' }
-                ].map((stat, index) => {
+                ].map((stat) => {
                   const IconComponent = stat.icon;
                   return (
                     <div 

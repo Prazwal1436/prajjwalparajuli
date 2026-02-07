@@ -3,10 +3,12 @@
 import { useState, useEffect } from 'react';
 import { X, Cookie, Shield, Info } from 'lucide-react';
 
+type GtagFunction = (...args: unknown[]) => void;
+
 declare global {
   interface Window {
-    gtag?: (...args: any[]) => void;
-    dataLayer?: any[];
+    gtag?: GtagFunction;
+    dataLayer?: unknown[];
   }
 }
 

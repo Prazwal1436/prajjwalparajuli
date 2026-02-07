@@ -1,7 +1,7 @@
 "use client";
 
-import { useState, useRef, useEffect } from 'react';
-import { Mail, Phone, MapPin, Send, CheckCircle, MessageCircle, Calendar, Clock, Star, Sparkles, Users, Globe, Rocket, ArrowRight } from 'lucide-react';
+import { useState, useRef } from 'react';
+import { Mail, Phone, MapPin, Send, CheckCircle, MessageCircle, Clock, Sparkles, Globe, Rocket } from 'lucide-react';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -14,7 +14,6 @@ const Contact = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [error, setError] = useState<string | null>(null);
-  const [isVisible, setIsVisible] = useState(false);
   const [focusedField, setFocusedField] = useState<string | null>(null);
   const sectionRef = useRef<HTMLDivElement>(null);
 
@@ -38,61 +37,17 @@ const Contact = () => {
     }
 
     try {
-      // Option 1: Using EmailJS (Recommended)
-      // Uncomment and configure this section after setting up EmailJS
-      /*
-      const emailjs = (await import('@emailjs/browser')).default;
-      
-      await emailjs.send(
-        'YOUR_SERVICE_ID', // Replace with your EmailJS service ID
-        'YOUR_TEMPLATE_ID', // Replace with your EmailJS template ID
-        {
-          from_name: formData.name,
-          from_email: formData.email,
-          subject: formData.subject,
-          service: formData.service,
-          message: formData.message,
-          to_email: 'contact@prajjwalparajuli.com.np' // Change this to your actual email
-        },
-        'YOUR_PUBLIC_KEY' // Replace with your EmailJS public key
-      );
-      */
-      
-      // Option 2: Using Next.js API Route
-      // Uncomment this section if you prefer API route approach
-      /*
       const response = await fetch('/api/contact', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({ ...formData, source: 'contact-section' }),
       });
       
       if (!response.ok) {
         throw new Error('Failed to send message');
       }
-      */
-      
-      // Option 3: Using Formspree
-      // Uncomment this section if you prefer Formspree
-      /*
-      const response = await fetch('https://formspree.io/f/YOUR_FORM_ID', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-      });
-      
-      if (!response.ok) {
-        throw new Error('Failed to send message');
-      }
-      */
-      
-      // Temporary simulation for demo (remove this in production)
-      await new Promise(resolve => setTimeout(resolve, 1500));
-      console.log('Form submitted:', formData);
       
       setIsSubmitted(true);
       setFormData({ name: '', email: '', subject: '', message: '', service: '' });
@@ -155,23 +110,6 @@ const Contact = () => {
       emoji: '🌐'
     }
   ];
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-        }
-      },
-      { threshold: 0.1 }
-    );
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
-    return () => observer.disconnect();
-  }, []);
 
   const services = [
     'Web Development',

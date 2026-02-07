@@ -1,13 +1,13 @@
 "use client";
 
-import { useState, useEffect, useRef } from 'react';
+import { useState, useRef } from 'react';
 import { ExternalLink, Eye, Filter, Star, Rocket, Trophy, Zap, Code2, Palette, BarChart3, Globe } from 'lucide-react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 const Projects = () => {
   const [activeFilter, setActiveFilter] = useState('all');
   const [hoveredProject, setHoveredProject] = useState<number | null>(null);
-  const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef<HTMLDivElement>(null);
 
   const projects = [
@@ -15,7 +15,7 @@ const Projects = () => {
       id: 1,
       title: 'Saathi - Blood Donation Companion',
       description: 'A community-driven blood donation companion app that connects people who urgently require blood with verified, willing donors. Features real-time emergency requests, donor matching, and donation history tracking.',
-      image: '/images/projects/saathi-hero.png', // Add your actual screenshot here
+      image: '/prajjwal.png',
       category: 'web-app',
       technologies: ['Next.js', 'TypeScript', 'React', 'Tailwind CSS', 'Real-time Notifications'],
       liveUrl: 'https://saathi.aoneskills.com.np',
@@ -31,7 +31,7 @@ const Projects = () => {
       id: 2,
       title: 'AOne Skills - Corporate Website',
       description: 'Professional corporate website for AOne Skills featuring course catalog, instructor profiles, student testimonials, and online enrollment system.',
-      image: '/images/projects/aoneskills-hero.png', // Add your actual screenshot here
+      image: '/prajjwal.png',
       category: 'website',
       technologies: ['Next.js', 'React', 'Tailwind CSS', 'Framer Motion', 'Sanity CMS'],
       liveUrl: 'https://aoneskills.com.np',
@@ -47,7 +47,7 @@ const Projects = () => {
       id: 3,
       title: 'E-Commerce Platform',
       description: 'A full-stack e-commerce solution built with Next.js, featuring payment integration, inventory management, and admin dashboard.',
-      image: '/api/placeholder/600/400',
+      image: '/prajjwal.png',
       category: 'web-app',
       technologies: ['Next.js', 'TypeScript', 'PostgreSQL', 'Stripe', 'Tailwind CSS'],
       liveUrl: 'https://example.com',
@@ -63,7 +63,7 @@ const Projects = () => {
       id: 4,
       title: 'Digital Marketing Dashboard',
       description: 'Analytics dashboard for tracking social media campaigns, SEO metrics, and ROI across multiple platforms.',
-      image: '/api/placeholder/600/400',
+      image: '/prajjwal.png',
       category: 'dashboard',
       technologies: ['React', 'Chart.js', 'Node.js', 'MongoDB', 'Google Analytics API'],
       liveUrl: 'https://example.com',
@@ -79,7 +79,7 @@ const Projects = () => {
       id: 5,
       title: 'Restaurant Website & Ordering System',
       description: 'Modern restaurant website with online ordering, table reservations, and menu management system.',
-      image: '/api/placeholder/600/400',
+      image: '/prajjwal.png',
       category: 'website',
       technologies: ['Next.js', 'Sanity CMS', 'PayPal', 'Framer Motion'],
       liveUrl: 'https://example.com',
@@ -95,7 +95,7 @@ const Projects = () => {
       id: 6,
       title: 'Task Management App',
       description: 'Collaborative project management tool with team features, time tracking, and progress analytics.',
-      image: '/api/placeholder/600/400',
+      image: '/prajjwal.png',
       category: 'web-app',
       technologies: ['Next.js', 'Prisma', 'PostgreSQL', 'Socket.io', 'Tailwind CSS'],
       liveUrl: 'https://example.com',
@@ -115,23 +115,6 @@ const Projects = () => {
     { key: 'website', label: 'Websites', count: projects.filter(p => p.category === 'website').length, icon: Palette, color: 'from-[color:var(--accent-3)] to-[color:var(--accent)]' },
     { key: 'dashboard', label: 'Dashboards', count: projects.filter(p => p.category === 'dashboard').length, icon: BarChart3, color: 'from-[color:var(--accent)] to-[color:var(--accent-3)]' }
   ];
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-        }
-      },
-      { threshold: 0.1 }
-    );
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
-    return () => observer.disconnect();
-  }, []);
 
   const filteredProjects = activeFilter === 'all' 
     ? projects 
@@ -206,10 +189,12 @@ const Projects = () => {
                     <div className="aspect-video bg-[color:var(--panel)] relative">
                       {/* Website Screenshot */}
                       {hasShareableImage && (
-                        <img 
+                        <Image
                           src={project.image}
                           alt={`${project.title} screenshot`}
-                          className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                          fill
+                          sizes="(max-width: 1024px) 100vw, 50vw"
+                          className="object-cover object-top transition-transform duration-500 group-hover:scale-105"
                           onError={(e) => {
                             // Fallback to gradient background if image fails to load
                             e.currentTarget.style.display = 'none';
@@ -403,10 +388,12 @@ const Projects = () => {
                   <div className="aspect-video bg-[color:var(--panel)] relative">
                     {/* Website Screenshot */}
                     {hasShareableImage && (
-                      <img 
+                      <Image
                         src={project.image}
                         alt={`${project.title} screenshot`}
-                        className="w-full h-full object-cover object-top transition-transform duration-300 group-hover:scale-105"
+                        fill
+                        sizes="(max-width: 768px) 100vw, 33vw"
+                        className="object-cover object-top transition-transform duration-300 group-hover:scale-105"
                         onError={(e) => {
                           // Fallback to gradient background if image fails to load
                           e.currentTarget.style.display = 'none';

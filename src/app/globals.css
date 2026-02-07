@@ -988,6 +988,20 @@ select:focus-visible {
   color: #0b0f1a;
 }
 
+.form-success,
+.form-error {
+  font-size: 0.85rem;
+  margin-top: 8px;
+}
+
+.form-success {
+  color: #0b7a3a;
+}
+
+.form-error {
+  color: #b42318;
+}
+
 .site-footer {
   padding: 40px 0;
 }
@@ -1320,6 +1334,91 @@ select:focus-visible {
   font-size: 0.8rem;
   text-transform: uppercase;
   letter-spacing: 0.15em;
+}
+
+@media (max-width: 1024px) {
+  .hero {
+    padding: 64px 0;
+  }
+
+  .hero-grid {
+    gap: 32px;
+  }
+
+  .hero-copy {
+    max-width: 100%;
+  }
+
+  .hero-card {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding: 56px 0;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  .hero-portrait {
+    max-width: 360px;
+    margin: 0 auto;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .stat {
+    text-align: center;
+  }
+
+  .hero-points {
+    font-size: 0.9rem;
+  }
+
+  .eyebrow {
+    letter-spacing: 0.2em;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 18px;
+  }
+
+  .hero-title {
+    font-size: clamp(2.1rem, 8vw, 2.8rem);
+  }
+
+  .hero-line {
+    font-size: clamp(1rem, 4.5vw, 1.3rem);
+  }
+
+  .lead {
+    font-size: 1rem;
+  }
+
+  .hero-card {
+    padding: 16px;
+  }
+
+  .hero-portrait {
+    padding: 8px;
+  }
+
+  .stat {
+    padding: 12px;
+  }
 }
 
 @media (min-width: 768px) {

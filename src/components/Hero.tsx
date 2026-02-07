@@ -5,22 +5,22 @@ import { ChevronDown, Github, Linkedin, Mail, MapPin, Sparkles, Download, ArrowR
 import Link from 'next/link';
 import Image from 'next/image';
 
+const words = [
+  'USA Outsourcing Partner',
+  'Full Stack Developer',
+  'Digital Marketing Expert',
+  'Remote US Hours Support',
+  'AI Automation Lead',
+  'Growth Marketing Strategist',
+  'Enterprise Integration Partner'
+];
+
 const Hero = () => {
   const [text, setText] = useState('');
   const [isDeleting, setIsDeleting] = useState(false);
   const [loopNum, setLoopNum] = useState(0);
   const [typingSpeed, setTypingSpeed] = useState(150);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-
-  const words = [
-    'USA Outsourcing Partner',
-    'Full Stack Developer',
-    'Digital Marketing Expert',
-    'Remote US Hours Support',
-    'AI Automation Lead',
-    'Growth Marketing Strategist',
-    'Enterprise Integration Partner'
-  ];
 
   useEffect(() => {
     const handleType = () => {
@@ -45,7 +45,7 @@ const Hero = () => {
 
     const timer = setTimeout(handleType, typingSpeed);
     return () => clearTimeout(timer);
-  }, [text, isDeleting, loopNum, typingSpeed, words]);
+  }, [text, isDeleting, loopNum, typingSpeed]);
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
@@ -260,7 +260,7 @@ const Hero = () => {
                   { number: '50+', label: 'Projects', color: 'text-[color:var(--accent)]' },
                   { number: '100+', label: 'Happy Clients', color: 'text-[color:var(--accent-2)]' },
                   { number: '3+', label: 'Years Exp', color: 'text-[color:var(--accent-3)]' }
-                ].map(({ number, label, color }, index) => (
+                ].map(({ number, label, color }) => (
                   <div key={label} className="text-center group cursor-pointer">
                     <div className={`text-2xl font-bold ${color} group-hover:scale-110 transition-transform duration-300`}>
                       {number}
